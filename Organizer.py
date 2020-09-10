@@ -1,10 +1,10 @@
-
+# TODO: write all of the things you move into a file
+# TODO: Don't move self
 import shutil
-import pathlib
 import os
 
-
 # Paths -----
+organizedPath = os.path.join("Organized")
 textPath = os.path.join("Organized", "Texts")
 imagePath = os.path.join("Organized", "Images")
 audioPath = os.path.join("Organized", "Audio")
@@ -19,7 +19,7 @@ publisherPath = os.path.join("Organized", "Publisher")
 accessPath = os.path.join("Organized", "Access")
 executablePath = os.path.join("Organized", "Executables")
 pdfPath = os.path.join("Organized", "PDFs")
-pythonPath = os.path.join("Organized", "Python")
+pythonPath = os.path.join("Organized", "Python")  # these arent included
 fontPath = os.path.join("Organized", "Fonts")
 xhtmlPath = os.path.join("Organized", "XHTMLs")
 htmlPath = os.path.join("Organized", "HTMLs")
@@ -33,18 +33,12 @@ swiftPath = os.path.join("Organized", "Swift")
 visualbasicPath = os.path.join("Organized", "Visual Basic")
 apkPath = os.path.join("Organized", "APKs")
 
-
-
-
-# File format lists -----
-files = ["res.pptx", "main.py", "test.png", "kk.mp3", "img.png", "src.exe", "meek.aac", "lif.py", "tek.pdf"]
-
-
-
 textFiles = [".txt", ".rtf"]
 imageFiles = [".png", ".jpg", ".jpeg", ".bmp", ".tif", ".tiff"]
-audioFiles = [".wav", ".mp3", ".ogg", ".gsm", ".dct", ".flac", ".au", ".aiff", ".vox", "raw", ".wma", ".aac", ".atrac", ".ra", ".oma", ".omg", ".atp"]
-videoFiles = [".webm", ".mpg", ".mp2", ".mpeg", ".mpe", ".mpv", ".mp4", ".m4p", ".m4v", ".avi", ".wmv", ".mov", ".qt", ".flv", ".swf", ".avchd", ".vob", ".rm", ".avi", ".3gp", ".3g2"]
+audioFiles = [".wav", ".mp3", ".ogg", ".gsm", ".dct", ".flac", ".au", ".aiff", ".vox", "raw", ".wma", ".aac", ".atrac",
+              ".ra", ".oma", ".omg", ".atp"]
+videoFiles = [".webm", ".mpg", ".mp2", ".mpeg", ".mpe", ".mpv", ".mp4", ".m4p", ".m4v", ".avi", ".wmv", ".mov", ".qt",
+              ".flv", ".swf", ".avchd", ".vob", ".rm", ".avi", ".3gp", ".3g2"]
 vectorFiles = [".ai", ".svg"]
 gifFiles = [".gif"]
 photoshopFiles = [".psd"]
@@ -70,39 +64,20 @@ visualbasicFiles = [".vb"]
 apkFiles = [".apk"]
 
 
-
-
-#   ----------------------------------------------------------------------------
-
-
-
-
-import sys
-import time
-import logging
-import os
-import string
-
-#from extensions import *  # All of the file extensions -----
-
-
-
-#dir = os.path.join("..", "renaming")
-#os.chdir(dir)
-
-for i in os.listdir():
-    print(i)
-
-
+# ----------------------------------------------------------------------------
 
 def clean():
-    files = os.listdir()
-    for i in range(len(files)):
+    # The string that gets logged onto the file
+    logText = ""
 
+    files = os.listdir()
+    for i in range(2):
 
         for extension in textFiles:
             if files[i].endswith(extension) == True:
-                print(files[i], "is an text file")
+                text = "{} was moved to Texts\n".format(files[i])
+                logText = logText + text
+                print(files[i], "was moved to Texts")
                 try:
                     os.makedirs(textPath)
                 except FileExistsError:
@@ -121,11 +96,11 @@ def clean():
             else:
                 pass
 
-
-
         for extension in imageFiles:
             if files[i].endswith(extension) == True:
-                print(files[i], "is an image file")
+                text = "{} was moved to Images\n".format(files[i])
+                logText = logText + text
+                print(files[i], "was moved to Images")
                 try:
                     os.makedirs(imagePath)
                 except FileExistsError:
@@ -144,11 +119,11 @@ def clean():
             else:
                 pass
 
-
-
         for extension in audioFiles:
             if files[i].endswith(extension) == True:
-                print(files[i], "is an audio file")
+                text = "{} was moved to Audio\n".format(files[i])
+                logText = logText + text
+                print(files[i], "was moved to Audio")
                 try:
                     os.makedirs(audioPath)
                 except FileExistsError:
@@ -167,11 +142,11 @@ def clean():
             else:
                 pass
 
-
-
         for extension in videoFiles:
             if files[i].endswith(extension) == True:
-                print(files[i], "is an video file")
+                text = "{} was moved to Videos\n".format(files[i])
+                logText = logText + text
+                print(files[i], "was moved to Videos")
                 try:
                     os.makedirs(videoPath)
                 except FileExistsError:
@@ -190,10 +165,11 @@ def clean():
             else:
                 pass
 
-
         for extension in vectorFiles:
             if files[i].endswith(extension) == True:
-                print(files[i], "is an vector file")
+                text = "{} was moved to Vectors\n".format(files[i])
+                logText = logText + text
+                print(files[i], "was moved to Vectors")
                 try:
                     os.makedirs(vectorPath)
                 except FileExistsError:
@@ -212,11 +188,11 @@ def clean():
             else:
                 pass
 
-
-
         for extension in gifFiles:
             if files[i].endswith(extension) == True:
-                print(files[i], "is a gif file")
+                text = "{} was moved to Gifs\n".format(files[i])
+                logText = logText + text
+                print(files[i], "was moved to Gifs")
                 try:
                     os.makedirs(gifpath)
                 except FileExistsError:
@@ -235,11 +211,11 @@ def clean():
             else:
                 pass
 
-
-
         for extension in photoshopFiles:
             if files[i].endswith(extension) == True:
-                print(files[i], "is an Photoshop file")
+                text = "{} was moved to Photoshop\n".format(files[i])
+                logText = logText + text
+                print(files[i], "was moved to Photoshop")
                 try:
                     os.makedirs(photoshopPath)
                 except FileExistsError:
@@ -258,10 +234,11 @@ def clean():
             else:
                 pass
 
-
         for extension in wordFiles:
             if files[i].endswith(extension) == True:
-                print(files[i], "is an word file")
+                text = "{} was moved to Word\n".format(files[i])
+                logText = logText + text
+                print(files[i], "was moved to Word")
                 try:
                     os.makedirs(wordPath)
                 except FileExistsError:
@@ -280,10 +257,11 @@ def clean():
             else:
                 pass
 
-
         for extension in powerpointFiles:
             if files[i].endswith(extension) == True:
-                print(files[i], "is an powerpoint file")
+                text = "{} was moved to Powerpoints\n".format(files[i])
+                logText = logText + text
+                print(files[i], "was moved to Powerpoints")
                 try:
                     os.makedirs(powerpointPath)
                 except FileExistsError:
@@ -302,10 +280,11 @@ def clean():
             else:
                 pass
 
-
         for extension in excelFiles:
             if files[i].endswith(extension) == True:
-                print(files[i], "is an excel file")
+                text = "{} was moved to Excels\n".format(files[i])
+                logText = logText + text
+                print(files[i], "was moved to Excels")
                 try:
                     os.makedirs(excelPath)
                 except FileExistsError:
@@ -324,12 +303,13 @@ def clean():
             else:
                 pass
 
-
-#--------------------------
+        # --------------------------
 
         for extension in publisherFiles:
             if files[i].endswith(extension) == True:
-                print(files[i], "is an publisher file")
+                text = "{} was moved to Publisher\n".format(files[i])
+                logText = logText + text
+                print(files[i], "was moved to Publisher")
                 try:
                     os.makedirs(publisherPath)
                 except FileExistsError:
@@ -348,11 +328,11 @@ def clean():
             else:
                 pass
 
-
-
         for extension in accessFiles:
             if files[i].endswith(extension) == True:
-                print(files[i], "is an access file")
+                text = "{} was moved to Access\n".format(files[i])
+                logText = logText + text
+                print(files[i], "was moved to Access")
                 try:
                     os.makedirs(accessPath)
                 except FileExistsError:
@@ -371,10 +351,11 @@ def clean():
             else:
                 pass
 
-
         for extension in executableFiles:
             if files[i].endswith(extension) == True:
-                print(files[i], "is an execuatble file")
+                text = "{} was moved to Executables\n".format(files[i])
+                logText = logText + text
+                print(files[i], "was moved to Executables")
                 try:
                     os.makedirs(executablePath)
                 except FileExistsError:
@@ -393,10 +374,11 @@ def clean():
             else:
                 pass
 
-
         for extension in pdfFiles:
             if files[i].endswith(extension) == True:
-                print(files[i], "is a PDF file")
+                text = "{} was moved to PDFs\n".format(files[i])
+                logText = logText + text
+                print(files[i], "was moved to PDFs")
                 try:
                     os.makedirs(pdfPath)
                 except FileExistsError:
@@ -415,11 +397,11 @@ def clean():
             else:
                 pass
 
-
-
         for extension in fontFiles:
             if files[i].endswith(extension) == True:
-                print(files[i], "is a font file")
+                text = "{} was moved to Fonts\n".format(files[i])
+                logText = logText + text
+                print(files[i], "was moved to Fonts")
                 try:
                     os.makedirs(fontPath)
                 except FileExistsError:
@@ -438,11 +420,11 @@ def clean():
             else:
                 pass
 
-
-
         for extension in xhtmlFiles:
             if files[i].endswith(extension) == True:
-                print(files[i], "is a XHtML file")
+                text = "{} was moved to XHTMLs\n".format(files[i])
+                logText = logText + text
+                print(files[i], "was moved to XHTMLs")
                 try:
                     os.makedirs(xhtmlPath)
                 except FileExistsError:
@@ -461,11 +443,11 @@ def clean():
             else:
                 pass
 
-
-
         for extension in htmlFiles:
             if files[i].endswith(extension) == True:
-                print(files[i], "is a HTML file")
+                text = "{} was moved to HTML\n".format(files[i])
+                logText = logText + text
+                print(files[i], "was moved to HTML")
                 try:
                     os.makedirs(htmlPath)
                 except FileExistsError:
@@ -484,11 +466,11 @@ def clean():
             else:
                 pass
 
-
-
         for extension in cssFiles:
             if files[i].endswith(extension) == True:
-                print(files[i], "is a CSS file")
+                text = "{} was moved to CSS\n".format(files[i])
+                logText = logText + text
+                print(files[i], "was moved to CSS")
                 try:
                     os.makedirs(cssPath)
                 except FileExistsError:
@@ -507,11 +489,11 @@ def clean():
             else:
                 pass
 
-
-
         for extension in javascriptFiles:
             if files[i].endswith(extension) == True:
-                print(files[i], "is a javascript file")
+                text = "{} was moved to Javascript\n".format(files[i])
+                logText = logText + text
+                print(files[i], "was moved to Javascript")
                 try:
                     os.makedirs(javascriptPath)
                 except FileExistsError:
@@ -530,10 +512,11 @@ def clean():
             else:
                 pass
 
-
         for extension in javaFiles:
             if files[i].endswith(extension) == True:
-                print(files[i], "is a java file")
+                text = "{} was moved to Java\n".format(files[i])
+                logText = logText + text
+                print(files[i], "was moved to Java")
                 try:
                     os.makedirs(javaPath)
                 except FileExistsError:
@@ -552,11 +535,11 @@ def clean():
             else:
                 pass
 
-
-
         for extension in phpFiles:
             if files[i].endswith(extension) == True:
-                print(files[i], "is a PHP file")
+                text = "{} was moved to PHP\n".format(files[i])
+                logText = logText + text
+                print(files[i], "was moved to PHP")
                 try:
                     os.makedirs(phpPath)
                 except FileExistsError:
@@ -575,11 +558,11 @@ def clean():
             else:
                 pass
 
-
-
         for extension in cFiles:
             if files[i].endswith(extension) == True:
-                print(files[i], "is a C file")
+                text = "{} was moved to C\n".format(files[i])
+                logText = logText + text
+                print(files[i], "was moved to C")
                 try:
                     os.makedirs(cPath)
                 except FileExistsError:
@@ -598,11 +581,11 @@ def clean():
             else:
                 pass
 
-
-
         for extension in cplusplusFiles:
             if files[i].endswith(extension) == True:
-                print(files[i], "is a C++ file")
+                text = "{} was moved to C++\n".format(files[i])
+                logText = logText + text
+                print(files[i], "was moved to C++")
                 try:
                     os.makedirs(cplusplusPath)
                 except FileExistsError:
@@ -621,11 +604,11 @@ def clean():
             else:
                 pass
 
-
-
         for extension in swiftFiles:
             if files[i].endswith(extension) == True:
-                print(files[i], "is a Swift file")
+                text = "{} was moved to Swift\n".format(files[i])
+                logText = logText + text
+                print(files[i], "was moved to Swift")
                 try:
                     os.makedirs(swiftPath)
                 except FileExistsError:
@@ -644,11 +627,11 @@ def clean():
             else:
                 pass
 
-
-
         for extension in visualbasicFiles:
             if files[i].endswith(extension) == True:
-                print(files[i], "is a Visual Basic file")
+                text = "{} was moved to Visual Basic\n".format(files[i])
+                logText = logText + text
+                print(files[i], "was moved to Visual Basic")
                 try:
                     os.makedirs(visualbasicPath)
                 except FileExistsError:
@@ -667,11 +650,11 @@ def clean():
             else:
                 pass
 
-
-
         for extension in apkFiles:
             if files[i].endswith(extension) == True:
-                print(files[i], "is a APK file")
+                text = "{} was moved to APKs\n".format(files[i])
+                logText = logText + text
+                print(files[i], "was moved to APKs")
                 try:
                     os.makedirs(apkPath)
                 except FileExistsError:
@@ -690,16 +673,20 @@ def clean():
             else:
                 pass
 
+    return logText
 
 
+def main():
+    # Each returns the text of appended results of files moved
+    sweep1 = clean()
+    sweep2 = clean()
+    gg = sweep1 + sweep2
+
+    # Make the logged file
+    os.chdir(organizedPath)
+    with open('Moved Files Log.txt', 'w') as fileObject:
+        fileObject.write(gg)
 
 
-"""
-"""
-
-for i in range(2):
-    clean()
-    print("sweep {}".format(i))
-    time.sleep(3)
-
-
+if __name__ == '__main__':
+    main()
