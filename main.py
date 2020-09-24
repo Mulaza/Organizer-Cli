@@ -76,6 +76,7 @@ masterList = []
 
 # --------------------------------- Dictionaries of each file type, file path and text
 textDict = {
+    'move': True,
     'path': textPath,
     'extensions': textFiles,
     'text': "{} was moved to Texts\n"
@@ -83,20 +84,23 @@ textDict = {
 masterList.append(textDict)
 
 imageDict = {
-    'path': imagePath ,
+    'move': True,
+    'path': imagePath,
     'extensions': imageFiles,
     'text': "{} was moved to Images\n"
 }
 masterList.append(imageDict)
 
 audioDict = {
+    'move': True,
     'path': audioPath,
     'extensions': audioFiles,
     'text': "{} was moved to Audio\n"
 }
 masterList.append(audioDict)
 
-videoDict ={
+videoDict = {
+    'move': True,
     'path': videoPath,
     'extensions': videoFiles,
     'text': "{} was moved to Videos\n"
@@ -104,6 +108,7 @@ videoDict ={
 masterList.append(videoDict)
 
 vectorDict = {
+    'move': True,
     'path': vectorPath,
     'extensions': vectorFiles,
     'text': "{} was moved to Vectors\n"
@@ -111,6 +116,7 @@ vectorDict = {
 masterList.append(vectorDict)
 
 gifDict = {
+    'move': True,
     'path': gifpath,
     'extensions': gifFiles,
     'text': "{} was moved to Gifs\n"
@@ -118,6 +124,7 @@ gifDict = {
 masterList.append(gifDict)
 
 photoshopDict = {
+    'move': True,
     'path': photoshopPath,
     'extensions': photoshopFiles,
     'text': "{} was moved to Photoshop\n"
@@ -125,6 +132,7 @@ photoshopDict = {
 masterList.append(photoshopDict)
 
 wordDict = {
+    'move': True,
     'path': wordPath,
     'extensions': wordFiles,
     'text': "{} was moved to Word\n"
@@ -132,6 +140,7 @@ wordDict = {
 masterList.append(wordDict)
 
 powerpointDict = {
+    'move': True,
     'path': powerpointPath,
     'extensions': powerpointFiles,
     'text': "{} was moved to Powerpoints\n"
@@ -139,6 +148,7 @@ powerpointDict = {
 masterList.append(powerpointDict)
 
 excelDict = {
+    'move': True,
     'path': excelPath,
     'extensions': excelFiles,
     'text': "{} was moved to Excels\n"
@@ -146,6 +156,7 @@ excelDict = {
 masterList.append(excelDict)
 
 publisherDict = {
+    'move': True,
     'path': publisherPath,
     'extensions': publisherFiles,
     'text': "{} was moved to Publisher\n"
@@ -153,6 +164,7 @@ publisherDict = {
 masterList.append(publisherDict)
 
 accessDict = {
+    'move': True,
     'path': accessPath,
     'extensions': accessFiles,
     'text': "{} was moved to Access\n"
@@ -160,6 +172,7 @@ accessDict = {
 masterList.append(accessDict)
 
 executableDict = {
+    'move': True,
     'path': executablePath,
     'extensions': executableFiles,
     'text': "{} was moved to Executables\n"
@@ -167,6 +180,7 @@ executableDict = {
 masterList.append(executableDict)
 
 pdfDict = {
+    'move': True,
     'path': pdfPath,
     'extensions': pdfFiles,
     'text': "{} was moved to PDFs\n"
@@ -174,6 +188,7 @@ pdfDict = {
 masterList.append(pdfDict)
 
 pythonDict = {
+    'move': True,
     'path': pythonPath,
     'extensions': pythonFiles,
     'text': "{} was moved to Python\n"
@@ -181,6 +196,7 @@ pythonDict = {
 masterList.append(pythonDict)
 
 fontDict = {
+    'move': True,
     'path': fontPath,
     'extensions': fontFiles,
     'text': "{} was moved to Fonts\n"
@@ -188,6 +204,7 @@ fontDict = {
 masterList.append(fontDict)
 
 xhtmlDict = {
+    'move': True,
     'path': xhtmlPath,
     'extensions': xhtmlFiles,
     'text': "{} was moved to XHTMLs\n"
@@ -195,6 +212,7 @@ xhtmlDict = {
 masterList.append(xhtmlDict)
 
 htmlDict = {
+    'move': True,
     'path': htmlPath,
     'extensions': htmlFiles,
     'text': "{} was moved to HTML\n"
@@ -202,6 +220,7 @@ htmlDict = {
 masterList.append(htmlDict)
 
 cssDict = {
+    'move': True,
     'path': cssPath,
     'extensions': cssFiles,
     'text': "{} was moved to CSS\n"
@@ -209,13 +228,15 @@ cssDict = {
 masterList.append(cssDict)
 
 javascriptDict = {
+    'move': True,
     'path': javascriptPath,
     'extensions': javascriptFiles,
     'text': "{} was moved to Javascript\n"
 }
 masterList.append(javascriptDict)
 
-javaDict ={
+javaDict = {
+    'move': True,
     'path': javaPath,
     'extensions': javaFiles,
     'text': "{} was moved to Java\n"
@@ -223,6 +244,7 @@ javaDict ={
 masterList.append(javaDict)
 
 phpDict = {
+    'move': True,
     'path': phpPath,
     'extensions': phpFiles,
     'text': "{} was moved to PHP\n"
@@ -230,6 +252,7 @@ phpDict = {
 masterList.append(phpDict)
 
 cDict = {
+    'move': True,
     'path': cPath,
     'extensions': cFiles,
     'text': "{} was moved to C\n"
@@ -237,6 +260,7 @@ cDict = {
 masterList.append(cDict)
 
 cplusplusDict = {
+    'move': True,
     'path': cplusplusPath,
     'extensions': cplusplusFiles,
     'text': "{} was moved to C++\n"
@@ -244,13 +268,15 @@ cplusplusDict = {
 masterList.append(cplusplusDict)
 
 swiftDict = {
+    'move': True,
     'path': swiftPath,
     'extensions': swiftFiles,
     'text': "{} was moved to Swift\n"
 }
 masterList.append(swiftDict)
 
-visualbasicDict ={
+visualbasicDict = {
+    'move': True,
     'path': visualbasicPath,
     'extensions': visualbasicFiles,
     'text': "{} was moved to Visual Basic\n"
@@ -258,6 +284,7 @@ visualbasicDict ={
 masterList.append(visualbasicDict)
 
 apkDict = {
+    'move': True,
     'path': apkPath,
     'extensions': apkFiles,
     'text': "{} was moved to APKs\n"
@@ -265,14 +292,10 @@ apkDict = {
 masterList.append(apkDict)
 
 
-
-
-
 def clean():
 
     # The log text of all files being moved
     logText = ""
-
 
     directoryFiles = os.listdir()
     for file in directoryFiles:
@@ -282,6 +305,10 @@ def clean():
             continue
 
         for item in masterList:
+
+            # Skip file types that shouldn't be moved
+            if item['move'] == False:
+                continue
 
             for extension in item['extensions']:
 
@@ -317,7 +344,6 @@ def clean():
 
 # --------------------------------- The main executable file
 def main():
-
     """
     Only need two sweeps, the first moves or renames files, the second ones moves the previously
     renamed files
@@ -335,10 +361,5 @@ def main():
         fileObject.write(sweep_text_final)
 
 
-
-
-
 if __name__ == '__main__':
     main()
-
-
