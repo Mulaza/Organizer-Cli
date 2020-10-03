@@ -1,6 +1,6 @@
 import shutil
 import os
-
+import click
 
 # --------------------------------- Paths for each file type
 organizedPath = os.path.join("Organized")
@@ -51,7 +51,7 @@ powerpointFiles = [".pptx", ".pptm", ".ppt", ".pps"]
 excelFiles = [".xls", ".xlsx", ".xltx", ".xltm"]
 publisherFiles = [".pub"]
 accessFiles = []
-executableFiles = [".exe"]
+executableFiles = [".exe", ".msi"]
 pdfFiles = [".pdf"]
 pythonFiles = [".py"]
 fontFiles = [".fnt", ".fon", ".otf", ".ttf"]
@@ -76,7 +76,7 @@ masterList = []
 
 # --------------------------------- Dictionaries of each file type, file path and text
 textDict = {
-    'move': True,
+    'move': False,
     'path': textPath,
     'extensions': textFiles,
     'text': "{} was moved to Texts\n"
@@ -84,7 +84,7 @@ textDict = {
 masterList.append(textDict)
 
 imageDict = {
-    'move': True,
+    'move': False,
     'path': imagePath,
     'extensions': imageFiles,
     'text': "{} was moved to Images\n"
@@ -92,7 +92,7 @@ imageDict = {
 masterList.append(imageDict)
 
 audioDict = {
-    'move': True,
+    'move': False,
     'path': audioPath,
     'extensions': audioFiles,
     'text': "{} was moved to Audio\n"
@@ -100,7 +100,7 @@ audioDict = {
 masterList.append(audioDict)
 
 videoDict = {
-    'move': True,
+    'move': False,
     'path': videoPath,
     'extensions': videoFiles,
     'text': "{} was moved to Videos\n"
@@ -108,7 +108,7 @@ videoDict = {
 masterList.append(videoDict)
 
 vectorDict = {
-    'move': True,
+    'move': False,
     'path': vectorPath,
     'extensions': vectorFiles,
     'text': "{} was moved to Vectors\n"
@@ -116,7 +116,7 @@ vectorDict = {
 masterList.append(vectorDict)
 
 gifDict = {
-    'move': True,
+    'move': False,
     'path': gifpath,
     'extensions': gifFiles,
     'text': "{} was moved to Gifs\n"
@@ -124,7 +124,7 @@ gifDict = {
 masterList.append(gifDict)
 
 photoshopDict = {
-    'move': True,
+    'move': False,
     'path': photoshopPath,
     'extensions': photoshopFiles,
     'text': "{} was moved to Photoshop\n"
@@ -132,7 +132,7 @@ photoshopDict = {
 masterList.append(photoshopDict)
 
 wordDict = {
-    'move': True,
+    'move': False,
     'path': wordPath,
     'extensions': wordFiles,
     'text': "{} was moved to Word\n"
@@ -140,7 +140,7 @@ wordDict = {
 masterList.append(wordDict)
 
 powerpointDict = {
-    'move': True,
+    'move': False,
     'path': powerpointPath,
     'extensions': powerpointFiles,
     'text': "{} was moved to Powerpoints\n"
@@ -148,7 +148,7 @@ powerpointDict = {
 masterList.append(powerpointDict)
 
 excelDict = {
-    'move': True,
+    'move': False,
     'path': excelPath,
     'extensions': excelFiles,
     'text': "{} was moved to Excels\n"
@@ -156,7 +156,7 @@ excelDict = {
 masterList.append(excelDict)
 
 publisherDict = {
-    'move': True,
+    'move': False,
     'path': publisherPath,
     'extensions': publisherFiles,
     'text': "{} was moved to Publisher\n"
@@ -164,7 +164,7 @@ publisherDict = {
 masterList.append(publisherDict)
 
 accessDict = {
-    'move': True,
+    'move': False,
     'path': accessPath,
     'extensions': accessFiles,
     'text': "{} was moved to Access\n"
@@ -172,7 +172,7 @@ accessDict = {
 masterList.append(accessDict)
 
 executableDict = {
-    'move': True,
+    'move': False,
     'path': executablePath,
     'extensions': executableFiles,
     'text': "{} was moved to Executables\n"
@@ -180,7 +180,7 @@ executableDict = {
 masterList.append(executableDict)
 
 pdfDict = {
-    'move': True,
+    'move': False,
     'path': pdfPath,
     'extensions': pdfFiles,
     'text': "{} was moved to PDFs\n"
@@ -188,7 +188,7 @@ pdfDict = {
 masterList.append(pdfDict)
 
 pythonDict = {
-    'move': True,
+    'move': False,
     'path': pythonPath,
     'extensions': pythonFiles,
     'text': "{} was moved to Python\n"
@@ -196,7 +196,7 @@ pythonDict = {
 masterList.append(pythonDict)
 
 fontDict = {
-    'move': True,
+    'move': False,
     'path': fontPath,
     'extensions': fontFiles,
     'text': "{} was moved to Fonts\n"
@@ -204,7 +204,7 @@ fontDict = {
 masterList.append(fontDict)
 
 xhtmlDict = {
-    'move': True,
+    'move': False,
     'path': xhtmlPath,
     'extensions': xhtmlFiles,
     'text': "{} was moved to XHTMLs\n"
@@ -212,7 +212,7 @@ xhtmlDict = {
 masterList.append(xhtmlDict)
 
 htmlDict = {
-    'move': True,
+    'move': False,
     'path': htmlPath,
     'extensions': htmlFiles,
     'text': "{} was moved to HTML\n"
@@ -220,7 +220,7 @@ htmlDict = {
 masterList.append(htmlDict)
 
 cssDict = {
-    'move': True,
+    'move': False,
     'path': cssPath,
     'extensions': cssFiles,
     'text': "{} was moved to CSS\n"
@@ -228,7 +228,7 @@ cssDict = {
 masterList.append(cssDict)
 
 javascriptDict = {
-    'move': True,
+    'move': False,
     'path': javascriptPath,
     'extensions': javascriptFiles,
     'text': "{} was moved to Javascript\n"
@@ -236,7 +236,7 @@ javascriptDict = {
 masterList.append(javascriptDict)
 
 javaDict = {
-    'move': True,
+    'move': False,
     'path': javaPath,
     'extensions': javaFiles,
     'text': "{} was moved to Java\n"
@@ -244,7 +244,7 @@ javaDict = {
 masterList.append(javaDict)
 
 phpDict = {
-    'move': True,
+    'move': False,
     'path': phpPath,
     'extensions': phpFiles,
     'text': "{} was moved to PHP\n"
@@ -252,7 +252,7 @@ phpDict = {
 masterList.append(phpDict)
 
 cDict = {
-    'move': True,
+    'move': False,
     'path': cPath,
     'extensions': cFiles,
     'text': "{} was moved to C\n"
@@ -260,7 +260,7 @@ cDict = {
 masterList.append(cDict)
 
 cplusplusDict = {
-    'move': True,
+    'move': False,
     'path': cplusplusPath,
     'extensions': cplusplusFiles,
     'text': "{} was moved to C++\n"
@@ -268,7 +268,7 @@ cplusplusDict = {
 masterList.append(cplusplusDict)
 
 swiftDict = {
-    'move': True,
+    'move': False,
     'path': swiftPath,
     'extensions': swiftFiles,
     'text': "{} was moved to Swift\n"
@@ -276,7 +276,7 @@ swiftDict = {
 masterList.append(swiftDict)
 
 visualbasicDict = {
-    'move': True,
+    'move': False,
     'path': visualbasicPath,
     'extensions': visualbasicFiles,
     'text': "{} was moved to Visual Basic\n"
@@ -284,7 +284,7 @@ visualbasicDict = {
 masterList.append(visualbasicDict)
 
 apkDict = {
-    'move': True,
+    'move': False,
     'path': apkPath,
     'extensions': apkFiles,
     'text': "{} was moved to APKs\n"
@@ -297,68 +297,174 @@ def clean():
     # The log text of all files being moved
     logText = ""
 
-    directoryFiles = os.listdir()
-    for file in directoryFiles:
+    for i in range(2):
 
-        # Skip my own file, don't want to move myself
-        if file == exceptionFile:
-            continue
+        directoryFiles = os.listdir()
+        for file in directoryFiles:
 
-        for item in masterList:
-
-            # Skip file types that shouldn't be moved
-            if item['move'] == False:
+            # Skip my own file, don't want to move myself
+            if file == exceptionFile:
                 continue
 
-            for extension in item['extensions']:
+            for item in masterList:
 
-                # Check if the file extension is exists in that list
-                if file.endswith(extension) == True:
-                    print("supported file")
-                    text = item['text'].format(file)
-                    print(text)
-                    logText = logText + text
+                # Skip file types that shouldn't be moved
+                if item['move'] == False:
+                    continue
 
-                    # Try to make the directory
-                    try:
-                        os.makedirs(item['path'])
-                    except FileExistsError:
+                for extension in item['extensions']:
+
+                    # Check if the file extension is exists in that list
+                    if file.endswith(extension) == True:
+                        click.echo("supported file")
+                        text = item['text'].format(file)
+                        click.echo(text)
+                        logText = logText + text
+
+                        # Try to make the directory
+                        try:
+                            os.makedirs(item['path'])
+                        except FileExistsError:
+                            pass
+
+                        # Try to move the file / rename file
+                        try:
+                            shutil.move(file, item['path'])
+                        except shutil.Error:
+                            click.echo("{} file already exists".format(file))
+                            click.echo(file)
+                            array = file.split('.')
+                            name = array[0] + " - Copy"
+                            array[0] = name
+                            new = '.'.join(array)
+                            os.rename(file, new)
+                    else:
                         pass
 
-                    # Try to move the file / rename file
-                    try:
-                        shutil.move(file, item['path'])
-                    except shutil.Error:
-                        print("{} file already exists".format(file))
-                        print(file)
-                        array = file.split('.')
-                        name = array[0] + " - Copy"
-                        array[0] = name
-                        new = '.'.join(array)
-                        os.rename(file, new)
-                else:
-                    pass
-
-    return logText
+        return logText
 
 
 # --------------------------------- The main executable file
-def main():
-    """
-    Only need two sweeps, the first moves or renames files, the second ones moves the previously
-    renamed files
-    """
-    # Each returns the text of appended results of files moved
-    sweep_text1 = clean()
-    sweep_text2 = clean()
-    print('------------ sweep completed ---')
 
-    sweep_text_final = sweep_text1 + sweep_text2
+# Click stuff
+@click.command()
+@click.argument('filetype', default="all", type=str)
+def main(filetype):
+
+    if (filetype == "images"):
+
+        imageDict['move'] = True
+
+        # Each returns the text of appended results of files moved
+        sweep_text1 = clean()
+
+    elif (filetype == 'audios'):
+
+        audioDict['move'] = True
+
+        # Each returns the text of appended results of files moved
+        sweep_text1 = clean()
+
+    elif (filetype == "videos"):
+
+        videoDict['move'] = True
+
+        # Each returns the text of appended results of files moved
+        sweep_text1 = clean()
+
+    elif (filetype == "vectors"):
+
+        vectorDict['move'] = True
+
+        # Each returns the text of appended results of files moved
+        sweep_text1 = clean()
+
+    elif (filetype == "gifs"):
+
+        gifDict['move'] = True
+
+        # Each returns the text of appended results of files moved
+        sweep_text1 = clean()
+
+    elif (filetype == "photoshop"):
+
+        photoshopDict['move'] = True
+
+        # Each returns the text of appended results of files moved
+        sweep_text1 = clean()
+
+    elif (filetype == "office"):
+
+        textDict['move'] = True
+        wordDict['move'] = True
+        powerpointDict['move'] = True
+        excelDict['move'] = True
+        publisherDict['move'] = True
+        accessDict['move'] = True
+
+        # Each returns the text of appended results of files moved
+        sweep_text1 = clean()
+
+    elif (filetype == 'pdfs'):
+
+        pdfDict['move'] = True
+
+        # Each returns the text of appended results of files moved
+        sweep_text1 = clean()
+
+    elif (filetype == "fonts"):
+
+        fontDict['move'] = True
+
+        # Each returns the text of appended results of files moved
+        sweep_text1 = clean()
+
+    elif (filetype == "code"):
+
+        xhtmlDict['move'] = True
+        htmlDict['move'] = True
+        cssDict['move'] = True
+        javascriptDict['move'] = True
+        javaDict['move'] = True
+        phpDict['move'] = True
+        cDict['move'] = True
+        cplusplusDict['move'] = True
+        swiftDict['move'] = True
+        visualbasicDict['move'] = True
+
+        # Each returns the text of appended results of files moved
+        sweep_text1 = clean()
+
+    elif (filetype == "programs"):
+
+        executableDict['move'] = True
+        apkDict['move'] = True
+
+        # Each returns the text of appended results of files moved
+        sweep_text1 = clean()
+
+    elif (filetype == "all"):
+
+        for i in masterList:
+            i['move'] = True
+
+        # Each returns the text of appended results of files moved
+        sweep_text1 = clean()
 
     # Make the logged file
     os.chdir(organizedPath)
     with open('Moved-Files-Log.txt', 'w') as fileObject:
-        fileObject.write(sweep_text_final)
+        fileObject.write(sweep_text1)
+
+    # remember to reset everything to false when done, or will it automatically
+    for i in masterList:
+        i['move'] = False
+
+
+@click.command()
+@click.argument('filetype', default="all")
+def main2(filetype):
+    click.echo('OK organizing {} '.format(filetype))
 
 
 if __name__ == '__main__':
