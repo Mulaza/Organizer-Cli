@@ -1,6 +1,8 @@
 # File-Organizer
 A script that scans throught the current directory and organizes all loose files into folders
 
+## Dependencies
+[colorama](https://pypi.org/project/colorama/)
 
 ## Commands
 
