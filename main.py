@@ -1,6 +1,16 @@
+# TODO: need to support microsof access files
+# TODO: torresnt files
+# TODO: some sort of case senisivity handeling for file extensions
+
 import shutil
 import os
 import click
+import colorama
+from colorama import Fore, Back, Style
+
+# Support for windows cmd
+colorama.init()
+
 
 # --------------------------------- Paths for each file type
 organizedPath = os.path.join("Organized")
@@ -79,7 +89,7 @@ textDict = {
     'move': False,
     'path': textPath,
     'extensions': textFiles,
-    'text': "{} was moved to Texts\n"
+    'text': Fore.LIGHTBLUE_EX + Fore.LIGHTBLUE_EX + "{} was moved to Texts\n" + Style.RESET_ALL + Style.RESET_ALL
 }
 masterList.append(textDict)
 
@@ -87,7 +97,7 @@ imageDict = {
     'move': False,
     'path': imagePath,
     'extensions': imageFiles,
-    'text': "{} was moved to Images\n"
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to Images\n" + Style.RESET_ALL
 }
 masterList.append(imageDict)
 
@@ -95,7 +105,7 @@ audioDict = {
     'move': False,
     'path': audioPath,
     'extensions': audioFiles,
-    'text': "{} was moved to Audio\n"
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to Audio\n" + Style.RESET_ALL
 }
 masterList.append(audioDict)
 
@@ -103,7 +113,7 @@ videoDict = {
     'move': False,
     'path': videoPath,
     'extensions': videoFiles,
-    'text': "{} was moved to Videos\n"
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to Videos\n" + Style.RESET_ALL
 }
 masterList.append(videoDict)
 
@@ -111,7 +121,7 @@ vectorDict = {
     'move': False,
     'path': vectorPath,
     'extensions': vectorFiles,
-    'text': "{} was moved to Vectors\n"
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to Vectors\n" + Style.RESET_ALL
 }
 masterList.append(vectorDict)
 
@@ -119,7 +129,7 @@ gifDict = {
     'move': False,
     'path': gifpath,
     'extensions': gifFiles,
-    'text': "{} was moved to Gifs\n"
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to Gifs\n" + Style.RESET_ALL
 }
 masterList.append(gifDict)
 
@@ -127,7 +137,7 @@ photoshopDict = {
     'move': False,
     'path': photoshopPath,
     'extensions': photoshopFiles,
-    'text': "{} was moved to Photoshop\n"
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to Photoshop\n" + Style.RESET_ALL
 }
 masterList.append(photoshopDict)
 
@@ -135,7 +145,7 @@ wordDict = {
     'move': False,
     'path': wordPath,
     'extensions': wordFiles,
-    'text': "{} was moved to Word\n"
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to Word\n" + Style.RESET_ALL
 }
 masterList.append(wordDict)
 
@@ -143,7 +153,7 @@ powerpointDict = {
     'move': False,
     'path': powerpointPath,
     'extensions': powerpointFiles,
-    'text': "{} was moved to Powerpoints\n"
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to Powerpoints\n" + Style.RESET_ALL
 }
 masterList.append(powerpointDict)
 
@@ -151,7 +161,7 @@ excelDict = {
     'move': False,
     'path': excelPath,
     'extensions': excelFiles,
-    'text': "{} was moved to Excels\n"
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to Excels\n" + Style.RESET_ALL
 }
 masterList.append(excelDict)
 
@@ -159,7 +169,7 @@ publisherDict = {
     'move': False,
     'path': publisherPath,
     'extensions': publisherFiles,
-    'text': "{} was moved to Publisher\n"
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to Publisher\n" + Style.RESET_ALL
 }
 masterList.append(publisherDict)
 
@@ -167,7 +177,7 @@ accessDict = {
     'move': False,
     'path': accessPath,
     'extensions': accessFiles,
-    'text': "{} was moved to Access\n"
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to Access\n" + Style.RESET_ALL
 }
 masterList.append(accessDict)
 
@@ -175,7 +185,7 @@ executableDict = {
     'move': False,
     'path': executablePath,
     'extensions': executableFiles,
-    'text': "{} was moved to Executables\n"
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to Executables\n" + Style.RESET_ALL
 }
 masterList.append(executableDict)
 
@@ -183,7 +193,7 @@ pdfDict = {
     'move': False,
     'path': pdfPath,
     'extensions': pdfFiles,
-    'text': "{} was moved to PDFs\n"
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to PDFs\n" + Style.RESET_ALL
 }
 masterList.append(pdfDict)
 
@@ -191,7 +201,7 @@ pythonDict = {
     'move': False,
     'path': pythonPath,
     'extensions': pythonFiles,
-    'text': "{} was moved to Python\n"
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to Python\n" + Style.RESET_ALL
 }
 masterList.append(pythonDict)
 
@@ -199,7 +209,7 @@ fontDict = {
     'move': False,
     'path': fontPath,
     'extensions': fontFiles,
-    'text': "{} was moved to Fonts\n"
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to Fonts\n" + Style.RESET_ALL
 }
 masterList.append(fontDict)
 
@@ -207,7 +217,7 @@ xhtmlDict = {
     'move': False,
     'path': xhtmlPath,
     'extensions': xhtmlFiles,
-    'text': "{} was moved to XHTMLs\n"
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to XHTMLs\n" + Style.RESET_ALL
 }
 masterList.append(xhtmlDict)
 
@@ -215,7 +225,7 @@ htmlDict = {
     'move': False,
     'path': htmlPath,
     'extensions': htmlFiles,
-    'text': "{} was moved to HTML\n"
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to HTML\n" + Style.RESET_ALL
 }
 masterList.append(htmlDict)
 
@@ -223,7 +233,7 @@ cssDict = {
     'move': False,
     'path': cssPath,
     'extensions': cssFiles,
-    'text': "{} was moved to CSS\n"
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to CSS\n" + Style.RESET_ALL
 }
 masterList.append(cssDict)
 
@@ -231,7 +241,7 @@ javascriptDict = {
     'move': False,
     'path': javascriptPath,
     'extensions': javascriptFiles,
-    'text': "{} was moved to Javascript\n"
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to Javascript\n" + Style.RESET_ALL
 }
 masterList.append(javascriptDict)
 
@@ -239,7 +249,7 @@ javaDict = {
     'move': False,
     'path': javaPath,
     'extensions': javaFiles,
-    'text': "{} was moved to Java\n"
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to Java\n" + Style.RESET_ALL
 }
 masterList.append(javaDict)
 
@@ -247,7 +257,7 @@ phpDict = {
     'move': False,
     'path': phpPath,
     'extensions': phpFiles,
-    'text': "{} was moved to PHP\n"
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to PHP\n" + Style.RESET_ALL
 }
 masterList.append(phpDict)
 
@@ -255,7 +265,7 @@ cDict = {
     'move': False,
     'path': cPath,
     'extensions': cFiles,
-    'text': "{} was moved to C\n"
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to C\n" + Style.RESET_ALL
 }
 masterList.append(cDict)
 
@@ -263,7 +273,7 @@ cplusplusDict = {
     'move': False,
     'path': cplusplusPath,
     'extensions': cplusplusFiles,
-    'text': "{} was moved to C++\n"
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to C++\n" + Style.RESET_ALL
 }
 masterList.append(cplusplusDict)
 
@@ -271,7 +281,7 @@ swiftDict = {
     'move': False,
     'path': swiftPath,
     'extensions': swiftFiles,
-    'text': "{} was moved to Swift\n"
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to Swift\n" + Style.RESET_ALL
 }
 masterList.append(swiftDict)
 
@@ -279,7 +289,7 @@ visualbasicDict = {
     'move': False,
     'path': visualbasicPath,
     'extensions': visualbasicFiles,
-    'text': "{} was moved to Visual Basic\n"
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to Visual Basic\n" + Style.RESET_ALL
 }
 masterList.append(visualbasicDict)
 
@@ -287,7 +297,7 @@ apkDict = {
     'move': False,
     'path': apkPath,
     'extensions': apkFiles,
-    'text': "{} was moved to APKs\n"
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to APKs\n" + Style.RESET_ALL
 }
 masterList.append(apkDict)
 
@@ -316,9 +326,8 @@ def clean():
 
                     # Check if the file extension is exists in that list
                     if file.endswith(extension) == True:
-                        click.echo("supported file")
                         text = item['text'].format(file)
-                        click.echo(text)
+                        click.echo(Fore.LIGHTBLACK_EX + text + Style.RESET_ALL)
                         logText = logText + text
 
                         # Try to make the directory
@@ -331,8 +340,10 @@ def clean():
                         try:
                             shutil.move(file, item['path'])
                         except shutil.Error:
-                            click.echo("{} file already exists".format(file))
-                            click.echo(file)
+                            click.echo(
+                                Fore.LIGHTBLUE_EX + "{} file already exists".format(file) + Style.RESET_ALL)
+                            click.echo(Fore.LIGHTBLUE_EX +
+                                       file + Style.RESET_ALL)
                             array = file.split('.')
                             name = array[0] + " - Copy"
                             array[0] = name

@@ -9,7 +9,7 @@ setup(
     version='0.1',
     # mandatory
     author_email='mulaza@Gmail.com',
-    install_requires=['Click'],
+    install_requires=['Click', 'colorama'],
     py_modules=['File-Organizer'],
     entry_points="""
         [console_scripts] 
