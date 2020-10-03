@@ -1,5 +1,5 @@
 # File-Organizer
-A script that scans throught the current directory and organizes all loose files into folders
+A script that scans throught the current directory and organizes all loose files into neat folders by file extension
 
 ## Dependencies
 [colorama](https://pypi.org/project/colorama/)
@@ -20,5 +20,5 @@ A script that scans throught the current directory and organizes all loose files
 
 ## Usage 
 ```text
-Organizer all
+Organizer 'your command here'
 ```
