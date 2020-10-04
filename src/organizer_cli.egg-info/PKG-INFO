@@ -1,0 +1,51 @@
+Metadata-Version: 2.1
+Name: organizer-cli
+Version: 0.0.1
+Summary: A CLI tool to quickly organize unkept files
+Home-page: https://github.com/Mulaza/File-Organizer
+Author: Mulaza Jacinto
+Author-email: mulazajacinto@Gmail.com
+License: UNKNOWN
+Description: # File-Organizer
+        A script that scans throught the current directory and organizes all loose files into folders
+        
+        
+        ## Commands
+        
+        * safe
+        * all
+        * images
+        * audios
+        * videos
+        * office
+        * vectors
+        * gifs
+        * photoshop
+        * pdfs
+        * fonts
+        * code
+        
+        ## Instal
+        ```python
+        pip install Organizer
+        ```
+        
+        ## Usage 
+        ```text
+        Organizer image     # Organizes all image files
+        ```
+        ```text
+        Organizer video     # Organizes all video files
+        ```
+        ```text
+        Organizer audio     # Organizes all audio files
+        ```
+        ```text
+        Organizer pdf       # Organizes all pdf files
+        ```
+        ```text
+        Organizer all       # Organizes all supported files
+        ```
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Description-Content-Type: text/markdown

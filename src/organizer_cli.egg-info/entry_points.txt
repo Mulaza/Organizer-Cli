@@ -1,0 +1,4 @@
+
+        [console_scripts] 
+        Organizer=main:main
+        
