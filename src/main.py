@@ -2,6 +2,7 @@
 # TODO: torresnt files
 # TODO: some sort of case senisivity handeling for file extensions
 
+
 import shutil
 import os
 import click
@@ -359,38 +360,50 @@ def clean():
 
 # Click stuff
 @click.command()
-@click.argument('filetype', default="all", type=str)
+# @click.option('--image', default="", help='Moves all image files')
+# @click.option('--audio', default="", help='Moves all audio files')
+# @click.option('--video', default="", help='Moves all video files')
+# @click.option('--vector', default="", help='Moves all vector files')
+# @click.option('--gif', default="", help='Moves all gif files')
+# @click.option('--photoshop', default="", help='Moves all photoshop files')
+# @click.option('--office', default="", help='Moves all office files')
+# @click.option('--pdf', default="", help='Moves all pdf files')
+# @click.option('--font', default="", help='Moves all font files')
+# @click.option('--code', default="", help='Moves all code files')
+# @click.option('--safe', default="", help='Moves all user friendly files')
+# @click.option('--all', default="", help='Moves all supported files')
+@click.argument('filetype', default="safe", type=str)
 def main(filetype):
 
-    if (filetype == "images"):
+    if (filetype == "image"):
 
         imageDict['move'] = True
 
         # Each returns the text of appended results of files moved
         sweep_text1 = clean()
 
-    elif (filetype == 'audios'):
+    elif (filetype == 'audio'):
 
         audioDict['move'] = True
 
         # Each returns the text of appended results of files moved
         sweep_text1 = clean()
 
-    elif (filetype == "videos"):
+    elif (filetype == "video"):
 
         videoDict['move'] = True
 
         # Each returns the text of appended results of files moved
         sweep_text1 = clean()
 
-    elif (filetype == "vectors"):
+    elif (filetype == "vector"):
 
         vectorDict['move'] = True
 
         # Each returns the text of appended results of files moved
         sweep_text1 = clean()
 
-    elif (filetype == "gifs"):
+    elif (filetype == "gif"):
 
         gifDict['move'] = True
 
@@ -416,14 +429,14 @@ def main(filetype):
         # Each returns the text of appended results of files moved
         sweep_text1 = clean()
 
-    elif (filetype == 'pdfs'):
+    elif (filetype == 'pdf'):
 
         pdfDict['move'] = True
 
         # Each returns the text of appended results of files moved
         sweep_text1 = clean()
 
-    elif (filetype == "fonts"):
+    elif (filetype == "font"):
 
         fontDict['move'] = True
 
@@ -446,10 +459,30 @@ def main(filetype):
         # Each returns the text of appended results of files moved
         sweep_text1 = clean()
 
-    elif (filetype == "programs"):
+    elif (filetype == "program"):
 
         executableDict['move'] = True
         apkDict['move'] = True
+
+        # Each returns the text of appended results of files moved
+        sweep_text1 = clean()
+
+    elif (filetype == "safe"):
+
+        imageDict['move'] = True
+        audioDict['move'] = True
+        videoDict['move'] = True
+        vectorDict['move'] = True
+        gifDict['move'] = True
+        photoshopDict['move'] = True
+        textDict['move'] = True
+        wordDict['move'] = True
+        powerpointDict['move'] = True
+        excelDict['move'] = True
+        publisherDict['move'] = True
+        accessDict['move'] = True
+        pdfDict['move'] = True
+        fontDict['move'] = True
 
         # Each returns the text of appended results of files moved
         sweep_text1 = clean()
