@@ -11,17 +11,19 @@ pip install organizer-cli
 
 ## Commands
 
-* all
-* images
-* audios
-* videos
+
+* image
+* audio
+* video
 * office
-* vectors
-* gifs
+* vector
+* gif
 * photoshop
-* pdfs
-* fonts
+* pdf
+* font
 * code
+* safe
+* all
 
 ## Usage 
 ```text
