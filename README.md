@@ -4,6 +4,11 @@ A script that scans throught the current directory and organizes all loose files
 ## Dependencies
 [colorama](https://pypi.org/project/colorama/)
 
+## Installation
+```python
+pip install organizer-cli
+```
+
 ## Commands
 
 * all
