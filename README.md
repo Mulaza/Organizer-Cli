@@ -28,12 +28,11 @@ pip install organizer-cli
 
 ## Instal
 ```python
-pip install Organizer
+pip install organizer-cli
 ```
 
 ## Usage 
 ```text
-<<<<<<< HEAD
 Organizer image     # Organizes all image files
 ```
 ```text
@@ -48,7 +47,3 @@ Organizer pdf       # Organizes all pdf files
 ```text
 Organizer all       # Organizes all supported files
 ```
-=======
-Organizer 'your command here'
-```
->>>>>>> 97cde8864002750de2ed0e215012200fc985f676
