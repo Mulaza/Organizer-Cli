@@ -1,0 +1,9 @@
+README.md
+setup.py
+src/main.py
+src/Organizer.egg-info/PKG-INFO
+src/Organizer.egg-info/SOURCES.txt
+src/Organizer.egg-info/dependency_links.txt
+src/Organizer.egg-info/entry_points.txt
+src/Organizer.egg-info/requires.txt
+src/Organizer.egg-info/top_level.txt

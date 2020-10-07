@@ -1,0 +1,9 @@
+README.md
+setup.py
+src/main.py
+src/organizer_cli.egg-info/PKG-INFO
+src/organizer_cli.egg-info/SOURCES.txt
+src/organizer_cli.egg-info/dependency_links.txt
+src/organizer_cli.egg-info/entry_points.txt
+src/organizer_cli.egg-info/requires.txt
+src/organizer_cli.egg-info/top_level.txt
