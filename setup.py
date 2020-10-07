@@ -8,8 +8,8 @@ with open("README.md", "r") as fh:
 setup(
 
     name='organizer-cli',
-    version='0.0.1',
-    description='A CLI tool to quickly organize unkept files',
+    version='0.0.2',
+    description='A CLI tool that scans through a directory and organizes all loose files into folders by file type.',
     url="https://github.com/Mulaza/File-Organizer",
     author="Mulaza Jacinto",
     author_email='mulazajacinto@Gmail.com',
@@ -17,6 +17,7 @@ setup(
     package_dir={'': 'src'},
     classifiers=[
         'Development Status :: 4 - Beta',
+        'Programming Language :: Python :: 3.7'
     ],
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -24,7 +25,7 @@ setup(
 
     entry_points="""
         [console_scripts] 
-        Organizer=main:main
+        Organize=main:main
         """
 
 )

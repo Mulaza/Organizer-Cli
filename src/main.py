@@ -1,4 +1,3 @@
-# TODO: need to support microsof access files
 # TODO: torresnt files
 # TODO: some sort of case senisivity handeling for file extensions
 
@@ -51,7 +50,11 @@ exceptionFile = 'main.py'
 textFiles = [".txt", ".rtf"]
 imageFiles = [".png", ".jpg", ".jpeg", ".bmp", ".tif", ".tiff"]
 audioFiles = [".wav", ".mp3", ".ogg", ".gsm", ".dct", ".flac", ".au", ".aiff", ".vox", "raw", ".wma", ".aac", ".atrac",
-              ".ra", ".oma", ".omg", ".atp"]
+              ".ra", ".oma", ".omg", ".atp", ".waptt", ".i3pack", ".3ga", ".opus", ".cda", ".wpl", ".rec", ".vdjsample",
+              ".mus", ".aax", ".amr", ".ds2", ".sng", ".dss", ".nvf", ".midi", ".m4a", ".pcm", ".mscz", ".ses", ".dvf",
+              ".gp5", ".gp4", ".bnk", ".aup", ".acd", ".sf2", ".thd", ".sty", ".mxl", ".band", ".cdfs", ".ram", ".aa",
+              ".eac3", ".mogg", ".au", ".seq", ".uax", ".mid", ".kar", ".dlp", ".vce", ".spx", ".m4r", ".wax"]
+
 videoFiles = [".webm", ".mpg", ".mp2", ".mpeg", ".mpe", ".mpv", ".mp4", ".m4p", ".m4v", ".avi", ".wmv", ".mov", ".qt",
               ".flv", ".swf", ".avchd", ".vob", ".rm", ".avi", ".3gp", ".3g2"]
 vectorFiles = [".ai", ".svg"]
@@ -61,11 +64,12 @@ wordFiles = [".doc", ".docx"]
 powerpointFiles = [".pptx", ".pptm", ".ppt", ".pps"]
 excelFiles = [".xls", ".xlsx", ".xltx", ".xltm"]
 publisherFiles = [".pub"]
-accessFiles = []
+accessFiles = [".accdb"]
 executableFiles = [".exe", ".msi"]
 pdfFiles = [".pdf"]
 pythonFiles = [".py"]
-fontFiles = [".fnt", ".fon", ".otf", ".ttf"]
+fontFiles = [".fnt", ".fon", ".otf", ".ttf", ".woff",
+             ".woff2", ".ofm", ".bmap", ".frf", ".afs"]
 xhtmlFiles = [".xhtml"]
 htmlFiles = [".html"]
 cssFiles = [".css"]
@@ -90,7 +94,7 @@ textDict = {
     'move': False,
     'path': textPath,
     'extensions': textFiles,
-    'text': Fore.LIGHTBLUE_EX + Fore.LIGHTBLUE_EX + "{} was moved to Texts\n" + Style.RESET_ALL + Style.RESET_ALL
+    'text': Fore.LIGHTBLUE_EX + "{} was moved to Texts\n" + Style.RESET_ALL + Style.RESET_ALL
 }
 masterList.append(textDict)
 
@@ -360,18 +364,6 @@ def clean():
 
 # Click stuff
 @click.command()
-# @click.option('--image', default="", help='Moves all image files')
-# @click.option('--audio', default="", help='Moves all audio files')
-# @click.option('--video', default="", help='Moves all video files')
-# @click.option('--vector', default="", help='Moves all vector files')
-# @click.option('--gif', default="", help='Moves all gif files')
-# @click.option('--photoshop', default="", help='Moves all photoshop files')
-# @click.option('--office', default="", help='Moves all office files')
-# @click.option('--pdf', default="", help='Moves all pdf files')
-# @click.option('--font', default="", help='Moves all font files')
-# @click.option('--code', default="", help='Moves all code files')
-# @click.option('--safe', default="", help='Moves all user friendly files')
-# @click.option('--all', default="", help='Moves all supported files')
 @click.argument('filetype', default="safe", type=str)
 def main(filetype):
 
@@ -503,12 +495,6 @@ def main(filetype):
     # remember to reset everything to false when done, or will it automatically
     for i in masterList:
         i['move'] = False
-
-
-@click.command()
-@click.argument('filetype', default="all")
-def main2(filetype):
-    click.echo('OK organizing {} '.format(filetype))
 
 
 if __name__ == '__main__':

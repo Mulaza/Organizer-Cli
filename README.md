@@ -1,4 +1,4 @@
-# File-Organizer
+# Organizer cli
 A script that scans throught the current directory and organizes all loose files into neat folders by file extension
 
 ## Dependencies
@@ -13,9 +13,9 @@ pip install organizer-cli
 
 * safe
 * all
-* images
-* audios
-* videos
+* image
+* audio
+* video
 * office
 * vector
 * gif
@@ -26,24 +26,44 @@ pip install organizer-cli
 * safe
 * all
 
-## Instal
-```python
-pip install organizer-cli
-```
 
 ## Usage 
 ```text
-Organizer image     # Organizes all image files
+>> Organizer               # Organizes all user friendly files
 ```
 ```text
-Organizer video     # Organizes all video files
+>> Organizer image         # Organizes all image files
 ```
 ```text
-Organizer audio     # Organizes all audio files
+>> Organizer video         # Organizes all video files
 ```
 ```text
-Organizer pdf       # Organizes all pdf files
+>> Organizer audio         # Organizes all audio files
 ```
 ```text
-Organizer all       # Organizes all supported files
+>> Organizer office        # Organizes all office files
+```
+```text
+>> Organizer vector        # Organizes all vector files
+```
+```text
+>> Organizer gif           # Organizes all gif files
+```
+```text
+>> Organizer photoshop     # Organizes all photoshop files
+```
+```text
+>> Organizer pdf           # Organizes all pdf files
+```
+```text
+>> Organizer font          # Organizes all font files
+```
+```text
+>> Organizer code          # Organizes all programming files
+```
+```text
+>> Organizer safe          # Organizes all user friendly files
+```
+```text
+>> Organizer all           # Organizes all supported files
 ```
