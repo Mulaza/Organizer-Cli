@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Organizer cli
 A script that scans throught the current directory and organizes all loose files into neat folders by file extension
 
@@ -30,92 +29,41 @@ pip install organizer-cli
 
 ## Usage 
 ```text
->> Organizer               # Organizes all user friendly files
+>> Organize               # Organizes all user friendly files
 ```
 ```text
->> Organizer image         # Organizes all image files
+>> Organize image         # Organizes all image files
 ```
 ```text
->> Organizer video         # Organizes all video files
+>> Organize video         # Organizes all video files
 ```
 ```text
->> Organizer audio         # Organizes all audio files
+>> Organize audio         # Organizes all audio files
 ```
 ```text
->> Organizer office        # Organizes all office files
+>> Organize office        # Organizes all office files
 ```
 ```text
->> Organizer vector        # Organizes all vector files
+>> Organize vector        # Organizes all vector files
 ```
 ```text
->> Organizer gif           # Organizes all gif files
+>> Organize gif           # Organizes all gif files
 ```
 ```text
->> Organizer photoshop     # Organizes all photoshop files
+>> Organize photoshop     # Organizes all photoshop files
 ```
 ```text
->> Organizer pdf           # Organizes all pdf files
+>> Organize pdf           # Organizes all pdf files
 ```
 ```text
->> Organizer font          # Organizes all font files
+>> Organize font          # Organizes all font files
 ```
 ```text
->> Organizer code          # Organizes all programming files
+>> Organize code          # Organizes all programming files
 ```
 ```text
->> Organizer safe          # Organizes all user friendly files
+>> Organize safe          # Organizes all user friendly files
 ```
 ```text
->> Organizer all           # Organizes all supported files
+>> Organize all           # Organizes all supported files
 ```
-=======
-# File-Organizer
-A script that scans throught the current directory and organizes all loose files into neat folders by file extension
-
-## Dependencies
-[colorama](https://pypi.org/project/colorama/)
-
-## Installation
-```python
-pip install organizer-cli
-```
-
-## Commands
-
-* safe
-* all
-* images
-* audios
-* videos
-* office
-* vector
-* gif
-* photoshop
-* pdf
-* font
-* code
-* safe
-* all
-
-## Install
-```python
-pip install organizer-cli
-```
-
-## Usage 
-```text
-Organizer image     # Organizes all image files
-```
-```text
-Organizer video     # Organizes all video files
-```
-```text
-Organizer audio     # Organizes all audio files
-```
-```text
-Organizer pdf       # Organizes all pdf files
-```
-```text
-Organizer all       # Organizes all supported files
-```
->>>>>>> origin

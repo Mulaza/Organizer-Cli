@@ -1,51 +1,82 @@
 Metadata-Version: 2.1
 Name: organizer-cli
-Version: 0.0.1
-Summary: A CLI tool to quickly organize unkept files
+Version: 0.0.2
+Summary: A CLI tool that scans through a directory and organizes all loose files into folders by file type.
 Home-page: https://github.com/Mulaza/File-Organizer
 Author: Mulaza Jacinto
 Author-email: mulazajacinto@Gmail.com
 License: UNKNOWN
-Description: # File-Organizer
-        A script that scans throught the current directory and organizes all loose files into folders
+Description: # Organizer cli
+        A script that scans throught the current directory and organizes all loose files into neat folders by file extension
         
+        ## Dependencies
+        [colorama](https://pypi.org/project/colorama/)
+        
+        ## Installation
+        ```python
+        pip install organizer-cli
+        ```
         
         ## Commands
         
         * safe
         * all
-        * images
-        * audios
-        * videos
+        * image
+        * audio
+        * video
         * office
-        * vectors
-        * gifs
+        * vector
+        * gif
         * photoshop
-        * pdfs
-        * fonts
+        * pdf
+        * font
         * code
+        * safe
+        * all
         
-        ## Instal
-        ```python
-        pip install Organizer
-        ```
         
         ## Usage 
         ```text
-        Organizer image     # Organizes all image files
+        >> Organize               # Organizes all user friendly files
         ```
         ```text
-        Organizer video     # Organizes all video files
+        >> Organize image         # Organizes all image files
         ```
         ```text
-        Organizer audio     # Organizes all audio files
+        >> Organize video         # Organizes all video files
         ```
         ```text
-        Organizer pdf       # Organizes all pdf files
+        >> Organize audio         # Organizes all audio files
         ```
         ```text
-        Organizer all       # Organizes all supported files
+        >> Organize office        # Organizes all office files
         ```
+        ```text
+        >> Organize vector        # Organizes all vector files
+        ```
+        ```text
+        >> Organize gif           # Organizes all gif files
+        ```
+        ```text
+        >> Organize photoshop     # Organizes all photoshop files
+        ```
+        ```text
+        >> Organize pdf           # Organizes all pdf files
+        ```
+        ```text
+        >> Organize font          # Organizes all font files
+        ```
+        ```text
+        >> Organize code          # Organizes all programming files
+        ```
+        ```text
+        >> Organize safe          # Organizes all user friendly files
+        ```
+        ```text
+        >> Organize all           # Organizes all supported files
+        ```
+        
 Platform: UNKNOWN
 Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3.7
 Description-Content-Type: text/markdown
