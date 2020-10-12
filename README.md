@@ -2,7 +2,9 @@
 A script that scans throught the current directory and organizes all loose files into neat folders by file extension
 
 ## Dependencies
+[click](https://pypi.org/project/click8/)
 [colorama](https://pypi.org/project/colorama/)
+[progress](https://pypi.org/project/progress/)
 
 ## Installation
 ```python

@@ -1,7 +1,7 @@
 Metadata-Version: 2.1
 Name: organizer-cli
-Version: 0.0.2
-Summary: A CLI tool that scans through a directory and organizes all loose files into folders by file type.
+Version: 0.0.3
+Summary: A CLI tool that scans through a directory and sorts all ungrouped files into folders by file type.
 Home-page: https://github.com/Mulaza/File-Organizer
 Author: Mulaza Jacinto
 Author-email: mulazajacinto@Gmail.com
@@ -10,7 +10,9 @@ Description: # Organizer cli
         A script that scans throught the current directory and organizes all loose files into neat folders by file extension
         
         ## Dependencies
+        [click](https://pypi.org/project/click8/)
         [colorama](https://pypi.org/project/colorama/)
+        [progress](https://pypi.org/project/progress/)
         
         ## Installation
         ```python
@@ -78,5 +80,6 @@ Description: # Organizer cli
         
 Platform: UNKNOWN
 Classifier: Development Status :: 4 - Beta
+Classifier: Natural Language :: English
 Classifier: Programming Language :: Python :: 3.7
 Description-Content-Type: text/markdown

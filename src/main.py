@@ -226,14 +226,21 @@ def main(filetype):
 
     bar.finish()
 
-    # --------------------------------- Make the logged file
-    os.chdir(organizedPath)
-    with open('Moved-Files-Log.txt', 'w') as fileObject:
-        fileObject.write(sweep_text1)
+    # If nothing was moved, no ned to write a file
+    if (sweep_text1.strip() == ""):
+        # Do nothing if nothing was moved
+        pass
 
-    # --------------------------------- remember to reset everything to false when done, or will it automatically
-    for i in masterList:
-        i['move'] = False
+    else:
+
+        # --------------------------------- Make the logged file
+        os.chdir(organizedPath)
+        with open('Moved-Files-Log.txt', 'w') as fileObject:
+            fileObject.write(sweep_text1)
+
+        # --------------------------------- remember to reset everything to false when done, or will it automatically
+        for i in masterList:
+            i['move'] = False
 
 
 if __name__ == '__main__':
