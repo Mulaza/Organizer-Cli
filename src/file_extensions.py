@@ -294,12 +294,3 @@ apkDict = {
 masterList.append(apkDict)
 
 
-cout = 0
-gg = 0
-for item in masterList:
-    gg += 1
-    for i in item:
-        cout += 1
-
-print(cout)
-print(gg)
