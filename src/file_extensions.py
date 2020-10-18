@@ -292,3 +292,14 @@ apkDict = {
     'text': Fore.LIGHTBLUE_EX + "{} was moved to APKs\n" + Style.RESET_ALL
 }
 masterList.append(apkDict)
+
+
+cout = 0
+gg = 0
+for item in masterList:
+    gg += 1
+    for i in item:
+        cout += 1
+
+print(cout)
+print(gg)

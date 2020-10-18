@@ -1,10 +1,16 @@
 # Organizer cli
-A script that scans throught the current directory and organizes all loose files into neat folders by file extension
+A Python CLI tool that runs throught a given directory and organizes all un-folder bound files into folders by file extension.
+Supports 108 different file extensions over 27 file type categories.
 
 ## Dependencies
 * [click](https://pypi.org/project/click8/)
 * [colorama](https://pypi.org/project/colorama/)
 * [progress](https://pypi.org/project/progress/)
+
+## Whats New
+* Added supported extensions [.vce, .spx, .m4r, .wax]
+* Moving 'code' files is now optional with the `code` command
+
 
 ## Installation
 ```python
