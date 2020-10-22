@@ -49,9 +49,12 @@ videoFiles = [".webm", ".mpg", ".mp2", ".mpeg", ".mpe", ".mpv", ".mp4", ".m4p", 
 vectorFiles = [".ai", ".svg"]
 gifFiles = [".gif"]
 photoshopFiles = [".psd"]
-wordFiles = [".doc", ".docx"]
-powerpointFiles = [".pptx", ".pptm", ".ppt", ".pps"]
-excelFiles = [".xls", ".xlsx", ".xltx", ".xltm"]
+wordFiles = [".doc", ".docx", ".asd", ".dotx",
+             ".svd", ".dot", ".wbk", ".docm", ".dotm", ".wll"]
+powerpointFiles = [".pptx", ".pptm", ".ppt", ".pps", ".ppsx", ".ppsm",
+                   ".pptm", ".sldx", ".pot", ".potx", ".ppam", ".ppa", ".sldm", ".pa", ".potm"]
+excelFiles = [".xls", ".xlsx", ".xltx", ".xltm", ".xlsb", ".xlsm", ".xlam",
+              ".xlb", ".xla", ".xlt", ".xar", ".xlm", ".xl", ".xlw", ".xltx", ".xll", ".xlc"]
 publisherFiles = [".pub"]
 accessFiles = [".accdb"]
 executableFiles = [".exe", ".msi"]
@@ -292,5 +295,3 @@ apkDict = {
     'text': Fore.LIGHTBLUE_EX + "{} was moved to APKs\n" + Style.RESET_ALL
 }
 masterList.append(apkDict)
-
-

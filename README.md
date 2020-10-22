@@ -8,7 +8,9 @@ Supports 108 different file extensions over 27 file type categories.
 * [progress](https://pypi.org/project/progress/)
 
 ## Whats New
-* Added supported extensions [.vce, .spx, .m4r, .wax]
+* Added supported extensions [.vce, .spx, .m4r, .wax, .xlsb, .xlsm, .xlam,
+              .xlb, .xla, .xlt, .xar, .xlm, .xl, .xlw, .xltx, .xll, .xlc, .ppsx, .ppsm,
+                   .pptm, .sldx, .pot, .potx, .ppam, .ppa, .sldm, .pa, .potm]
 * Moving 'code' files is now optional with the `code` command
 
 
