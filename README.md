@@ -1,4 +1,4 @@
-![banner](https://user-images.githubusercontent.com/60890281/96827801-f258eb00-1468-11eb-91de-0cf007ff30d5.png)
+![banner2](https://user-images.githubusercontent.com/60890281/96827963-495ec000-1469-11eb-8848-2a4b64cb66be.png)
 
 
 # Organizer cli
