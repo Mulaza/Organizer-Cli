@@ -1,3 +1,6 @@
+![banner](https://user-images.githubusercontent.com/60890281/96827801-f258eb00-1468-11eb-91de-0cf007ff30d5.png)
+
+
 # Organizer cli
 A Python CLI tool that runs throught a given directory and organizes all un-folder bound files into folders by file extension.
 Supports 108 different file extensions over 27 file type categories.
