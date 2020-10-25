@@ -3,17 +3,16 @@
 import pathlib
 import shutil
 import time
-import os
-import sys
 
 # Modules
 from file_extensions import *
+from functions import *
 
 # External dependencies
-import click
-import colorama
-from colorama import Fore, Back, Style
 from progress.bar import IncrementalBar
+from colorama import Fore, Back, Style
+import colorama
+import click
 
 
 # Support for windows cmd
@@ -21,224 +20,401 @@ colorama.init()
 
 
 # TODO: take the loop out of this & have it take in a single file item argument
+# TODO: break into 2 parts find files and move files
 
-# --------------------------------- The clean function that
-def clean():
-
-    # The log text of all files being moved
-    logText = ""
-
-    for i in range(3):
-
-        directoryFiles = []
-
-        # Only use the files not folders
-        for item in os.listdir():
-            if os.path.isfile(os.path.join(item)):
-                directoryFiles.append(item)
-
-        for file in directoryFiles:
-
-            # Skip my own file, don't want to move myself
-            if file == exceptionFile:
-                continue
-
-            for item in masterList:
-
-                # Skip file types that shouldn't be moved
-                if item['move'] == False:
-                    continue
-
-                for extension in item['extensions']:
-
-                    # Check if the file extension is exists in that list
-                    if pathlib.Path(file).suffix.lower() == extension.lower():
-                        text = item['text'].format(file)
- #                       click.echo(Fore.LIGHTBLACK_EX + text + Style.RESET_ALL)
-                        logText = logText + text
-
-                        # Try to make the directory
-                        try:
-                            os.makedirs(item['path'])
-                        except FileExistsError:
-                            pass
-
-                        # Try to move the file / rename file
-                        try:
-                            shutil.move(file, item['path'])
-                        except shutil.Error:
-                         #                           click.echo(Fore.LIGHTBLUE_EX + "{} file already exists".format(file) + Style.RESET_ALL)
-                         #                           click.echo(Fore.LIGHTBLUE_EX +file + Style.RESET_ALL)
-                            array = file.split('.')
-                            name = array[0] + " - Copy"
-                            array[0] = name
-                            new = '.'.join(array)
-                            os.rename(file, new)
-                    else:
-                        pass
-
-    return logText
-
-
-# --------------------------------- The main executable file
 
 # Click stuff
 @click.command()
 @click.argument('filetype', default="safe", type=str)
 def main(filetype):
 
-    attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
-        "This action will be moving files would you like to continue (y/n)"
+    sweep_text1 = ""
 
-    decide = click.prompt(attention_text,  type=str)
+    if (filetype == "image"):
 
-    if (decide == "y"):
+        imageDict['move'] = True
 
-        if (filetype == "image"):
+        # Find out the number if files that are able to be moved
+        moveable_num_2 = movableFilesCount()
 
-            imageDict['move'] = True
+        # Only ask the user to move files if there are files of that type available
+        if (moveable_num_2 > 0):
 
-            # Each returns the text of appended results of files moved
-            sweep_text1 = clean()
+            # Prompt the user if they wish to continue
+            attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
+                "This action will be moving {} file(s) would you like to continue (y/n)".format(
+                    moveable_num_2)
 
-        elif (filetype == 'audio'):
+            decide = click.prompt(attention_text,  type=str)
 
-            audioDict['move'] = True
+            if (decide == "y"):
+                # Each returns the text of appended results of files moved
+                sweep_text1 = clean()
+                displayProgressbar(moveable_num_2)
+            else:
+                sys.exit()
+        else:
+            click.echo("No files of that type found in directory")
 
-            # Each returns the text of appended results of files moved
-            sweep_text1 = clean()
+    elif (filetype == 'audio'):
 
-        elif (filetype == "video"):
+        audioDict['move'] = True
 
-            videoDict['move'] = True
+        # Find out the number if files that are able to be moved
+        moveable_num_2 = movableFilesCount()
 
-            # Each returns the text of appended results of files moved
-            sweep_text1 = clean()
+        # Only ask the user to move files if there are files of that type available
+        if (moveable_num_2 > 0):
 
-        elif (filetype == "vector"):
+            # Prompt the user if they wish to continue
+            attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
+                "This action will be moving {} file(s) would you like to continue (y/n)".format(
+                    moveable_num_2)
 
-            vectorDict['move'] = True
+            decide = click.prompt(attention_text,  type=str)
 
-            # Each returns the text of appended results of files moved
-            sweep_text1 = clean()
+            if (decide == "y"):
+                # Each returns the text of appended results of files moved
+                sweep_text1 = clean()
+                displayProgressbar(moveable_num_2)
 
-        elif (filetype == "gif"):
+            else:
+                sys.exit()
+        else:
+            click.echo("No files of that type found in directory")
 
-            gifDict['move'] = True
+    elif (filetype == "video"):
 
-            # Each returns the text of appended results of files moved
-            sweep_text1 = clean()
+        videoDict['move'] = True
 
-        elif (filetype == "photoshop"):
+        # Find out the number if files that are able to be moved
+        moveable_num_2 = movableFilesCount()
 
-            photoshopDict['move'] = True
+        # Only ask the user to move files if there are files of that type available
+        if (moveable_num_2 > 0):
 
-            # Each returns the text of appended results of files moved
-            sweep_text1 = clean()
+            # Prompt the user if they wish to continue
+            attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
+                "This action will be moving {} file(s) would you like to continue (y/n)".format(
+                    moveable_num_2)
 
-        elif (filetype == "office"):
+            decide = click.prompt(attention_text,  type=str)
 
-            textDict['move'] = True
-            wordDict['move'] = True
-            powerpointDict['move'] = True
-            excelDict['move'] = True
-            publisherDict['move'] = True
-            accessDict['move'] = True
+            if (decide == "y"):
+                # Each returns the text of appended results of files moved
+                sweep_text1 = clean()
+                displayProgressbar(moveable_num_2)
 
-            # Each returns the text of appended results of files moved
-            sweep_text1 = clean()
+            else:
+                sys.exit()
+        else:
+            click.echo("No files of that type found in directory")
 
-        elif (filetype == 'pdf'):
+    elif (filetype == "vector"):
 
-            pdfDict['move'] = True
+        vectorDict['move'] = True
 
-            # Each returns the text of appended results of files moved
-            sweep_text1 = clean()
+        # Find out the number if files that are able to be moved
+        moveable_num_2 = movableFilesCount()
 
-        elif (filetype == "font"):
+        # Only ask the user to move files if there are files of that type available
+        if (moveable_num_2 > 0):
 
-            fontDict['move'] = True
+            # Prompt the user if they wish to continue
+            attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
+                "This action will be moving {} file(s) would you like to continue (y/n)".format(
+                    moveable_num_2)
 
-            # Each returns the text of appended results of files moved
-            sweep_text1 = clean()
+            decide = click.prompt(attention_text,  type=str)
 
-        elif (filetype == "code"):
+            if (decide == "y"):
+                # Each returns the text of appended results of files moved
+                sweep_text1 = clean()
+                displayProgressbar(moveable_num_2)
+            else:
+                sys.exit()
+        else:
+            click.echo("No files of that type found in directory")
 
-            xhtmlDict['move'] = True
-            htmlDict['move'] = True
-            cssDict['move'] = True
-            javascriptDict['move'] = True
-            javaDict['move'] = True
-            phpDict['move'] = True
-            cDict['move'] = True
-            cplusplusDict['move'] = True
-            swiftDict['move'] = True
-            visualbasicDict['move'] = True
+    elif (filetype == "gif"):
 
-            # Each returns the text of appended results of files moved
-            sweep_text1 = clean()
+        gifDict['move'] = True
 
-        elif (filetype == "program"):
+        # Find out the number if files that are able to be moved
+        moveable_num_2 = movableFilesCount()
 
-            executableDict['move'] = True
-            apkDict['move'] = True
+        # Only ask the user to move files if there are files of that type available
+        if (moveable_num_2 > 0):
 
-            # Each returns the text of appended results of files moved
-            sweep_text1 = clean()
+            # Prompt the user if they wish to continue
+            attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
+                "This action will be moving {} file(s) would you like to continue (y/n)".format(
+                    moveable_num_2)
 
-        elif (filetype == "safe"):
+            decide = click.prompt(attention_text,  type=str)
 
-            imageDict['move'] = True
-            audioDict['move'] = True
-            videoDict['move'] = True
-            vectorDict['move'] = True
-            gifDict['move'] = True
-            photoshopDict['move'] = True
-            textDict['move'] = True
-            wordDict['move'] = True
-            powerpointDict['move'] = True
-            excelDict['move'] = True
-            publisherDict['move'] = True
-            accessDict['move'] = True
-            pdfDict['move'] = True
-            fontDict['move'] = True
+            if (decide == "y"):
+                # Each returns the text of appended results of files moved
+                sweep_text1 = clean()
+                displayProgressbar(moveable_num_2)
+            else:
+                sys.exit()
+        else:
+            click.echo("No files of that type found in directory")
 
-            # Each returns the text of appended results of files moved
-            sweep_text1 = clean()
+    elif (filetype == "photoshop"):
 
-        elif (filetype == "all"):
+        photoshopDict['move'] = True
 
-            for i in masterList:
-                i['move'] = True
+        # Find out the number if files that are able to be moved
+        moveable_num_2 = movableFilesCount()
 
-            # Each returns the text of appended results of files moved
-            sweep_text1 = clean()
+        # Only ask the user to move files if there are files of that type available
+        if (moveable_num_2 > 0):
+
+            # Prompt the user if they wish to continue
+            attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
+                "This action will be moving {} file(s) would you like to continue (y/n)".format(
+                    moveable_num_2)
+
+            decide = click.prompt(attention_text,  type=str)
+
+            if (decide == "y"):
+                # Each returns the text of appended results of files moved
+                sweep_text1 = clean()
+                displayProgressbar(moveable_num_2)
+            else:
+                sys.exit()
+        else:
+            click.echo("No files of that type found in directory")
+
+    elif (filetype == "office"):
+
+        textDict['move'] = True
+        wordDict['move'] = True
+        powerpointDict['move'] = True
+        excelDict['move'] = True
+        publisherDict['move'] = True
+        accessDict['move'] = True
+
+        # Find out the number if files that are able to be moved
+        moveable_num_2 = movableFilesCount()
+
+        # Only ask the user to move files if there are files of that type available
+        if (moveable_num_2 > 0):
+
+            # Prompt the user if they wish to continue
+            attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
+                "This action will be moving {} file(s) would you like to continue (y/n)".format(
+                    moveable_num_2)
+
+            decide = click.prompt(attention_text,  type=str)
+
+            if (decide == "y"):
+                # Each returns the text of appended results of files moved
+                sweep_text1 = clean()
+                displayProgressbar(moveable_num_2)
+            else:
+                sys.exit()
+        else:
+            click.echo("No files of that type found in directory")
+
+    elif (filetype == 'pdf'):
+
+        pdfDict['move'] = True
+
+        # Find out the number if files that are able to be moved
+        moveable_num_2 = movableFilesCount()
+
+        # Only ask the user to move files if there are files of that type available
+        if (moveable_num_2 > 0):
+
+            # Prompt the user if they wish to continue
+            attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
+                "This action will be moving {} file(s) would you like to continue (y/n)".format(
+                    moveable_num_2)
+
+            decide = click.prompt(attention_text,  type=str)
+
+            if (decide == "y"):
+                # Each returns the text of appended results of files moved
+                sweep_text1 = clean()
+                displayProgressbar(moveable_num_2)
+            else:
+                sys.exit()
+        else:
+            click.echo("No files of that type found in directory")
+
+    elif (filetype == "font"):
+
+        fontDict['move'] = True
+
+        # Find out the number if files that are able to be moved
+        moveable_num_2 = movableFilesCount()
+
+        # Only ask the user to move files if there are files of that type available
+        if (moveable_num_2 > 0):
+
+            # Prompt the user if they wish to continue
+            attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
+                "This action will be moving {} file(s) would you like to continue (y/n)".format(
+                    moveable_num_2)
+
+            decide = click.prompt(attention_text,  type=str)
+
+            if (decide == "y"):
+                # Each returns the text of appended results of files moved
+                sweep_text1 = clean()
+                displayProgressbar(moveable_num_2)
+            else:
+                sys.exit()
+        else:
+            click.echo("No files of that type found in directory")
+
+    elif (filetype == "code"):
+
+        xhtmlDict['move'] = True
+        htmlDict['move'] = True
+        cssDict['move'] = True
+        javascriptDict['move'] = True
+        javaDict['move'] = True
+        phpDict['move'] = True
+        cDict['move'] = True
+        cplusplusDict['move'] = True
+        swiftDict['move'] = True
+        visualbasicDict['move'] = True
+
+        # Find out the number if files that are able to be moved
+        moveable_num_2 = movableFilesCount()
+
+        # Only ask the user to move files if there are files of that type available
+        if (moveable_num_2 > 0):
+
+            # Prompt the user if they wish to continue
+            attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
+                "This action will be moving {} file(s) would you like to continue (y/n)".format(
+                    moveable_num_2)
+
+            decide = click.prompt(attention_text,  type=str)
+
+            if (decide == "y"):
+                # Each returns the text of appended results of files moved
+                sweep_text1 = clean()
+                displayProgressbar(moveable_num_2)
+            else:
+                sys.exit()
+        else:
+            click.echo("No files of that type found in directory")
+
+    elif (filetype == "program"):
+
+        executableDict['move'] = True
+        apkDict['move'] = True
+
+        # Find out the number if files that are able to be moved
+        moveable_num_2 = movableFilesCount()
+
+        # Only ask the user to move files if there are files of that type available
+        if (moveable_num_2 > 0):
+
+            # Prompt the user if they wish to continue
+            attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
+                "This action will be moving {} file(s) would you like to continue (y/n)".format(
+                    moveable_num_2)
+
+            decide = click.prompt(attention_text,  type=str)
+
+            if (decide == "y"):
+                # Each returns the text of appended results of files moved
+                sweep_text1 = clean()
+                displayProgressbar(moveable_num_2)
+            else:
+                sys.exit()
+        else:
+            click.echo("No files of that type found in directory")
+
+    elif (filetype == "safe"):
+
+        imageDict['move'] = True
+        audioDict['move'] = True
+        videoDict['move'] = True
+        vectorDict['move'] = True
+        gifDict['move'] = True
+        photoshopDict['move'] = True
+        textDict['move'] = True
+        wordDict['move'] = True
+        powerpointDict['move'] = True
+        excelDict['move'] = True
+        publisherDict['move'] = True
+        accessDict['move'] = True
+        pdfDict['move'] = True
+        fontDict['move'] = True
+
+        # Find out the number if files that are able to be moved
+        moveable_num_2 = movableFilesCount()
+
+        # Only ask the user to move files if there are files of that type available
+        if (moveable_num_2 > 0):
+
+            # Prompt the user if they wish to continue
+            attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
+                "This action will be moving {} file(s) would you like to continue (y/n)".format(
+                    moveable_num_2)
+
+            decide = click.prompt(attention_text,  type=str)
+
+            if (decide == "y"):
+                # Each returns the text of appended results of files moved
+                sweep_text1 = clean()
+                displayProgressbar(moveable_num_2)
+            else:
+                sys.exit()
+        else:
+            click.echo("No files of that type found in directory")
+
+    elif (filetype == "all"):
+
+        for i in masterList:
+            i['move'] = True
+
+        # Find out the number if files that are able to be moved
+        moveable_num_2 = movableFilesCount()
+
+        # Only ask the user to move files if there are files of that type available
+        if (moveable_num_2 > 0):
+
+            # Prompt the user if they wish to continue
+            attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
+                "This action will be moving {} file(s) would you like to continue (y/n)".format(
+                    moveable_num_2)
+
+            decide = click.prompt(attention_text,  type=str)
+
+            if (decide == "y"):
+                # Each returns the text of appended results of files moved
+                sweep_text1 = clean()
+                displayProgressbar(moveable_num_2)
+            else:
+                sys.exit()
+        else:
+            click.echo("No files of that type found in directory")
 
     else:
-        sys.exit()
+        click.echo("Command '{}' is currently unsupported".format(filetype))
 
-    bar = IncrementalBar('Organizing...', max=100)
-
-    for i in range(100):
-        # Increment the bar
-        bar.next()
-        time.sleep(0.01)
-
-    bar.finish()
-
-    # If nothing was moved, no ned to write a file
+    # Only write to the file if something was moved
     if (sweep_text1.strip() == ""):
         # Do nothing if nothing was moved
         pass
 
     else:
 
-        # --------------------------------- Make the logged file
+        # Make the logged file
         os.chdir(organizedPath)
         with open('Moved-Files-Log.txt', 'w') as fileObject:
             fileObject.write(sweep_text1)
 
-        # --------------------------------- remember to reset everything to false when done, or will it automatically
+        # Remember to reset everything to false when done, or will it automatically
         for i in masterList:
             i['move'] = False
 

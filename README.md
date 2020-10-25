@@ -15,7 +15,6 @@ Supports 108 different file extensions over 27 file type categories.
 ### Features
 * Pre-action prompt to the number of files that will be moved.
 * Prompts the user if no files extensions are supported in the directory.
-* Moving 'code' files is now optional with the `code` command.
 ### Extensions
 * Added extensions include [.vce, .spx, .m4r, .wax, .xlsb, .xlsm, .xlam,
   .xlb, .xla, .xlt, .xar, .xlm, .xl, .xlw, .xltx, .xll, .xlc, .ppsx, .ppsm,
@@ -23,7 +22,7 @@ Supports 108 different file extensions over 27 file type categories.
 
 
 ## Installation
-```python
+```text
 pip install organizer-cli
 ```
 

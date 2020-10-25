@@ -6,7 +6,8 @@ Home-page: https://github.com/Mulaza/File-Organizer
 Author: Mulaza Jacinto
 Author-email: mulazajacinto@Gmail.com
 License: UNKNOWN
-Description: ![banner3](https://user-images.githubusercontent.com/60890281/96828268-ede10200-1469-11eb-832d-f2808434797c.png)
+Description: ![banner2](https://user-images.githubusercontent.com/60890281/97106137-d0769700-16fa-11eb-93a7-834e1c3aee29.png)
+        
         
         
         # Organizer cli
@@ -22,7 +23,6 @@ Description: ![banner3](https://user-images.githubusercontent.com/60890281/96828
         ### Features
         * Pre-action prompt to the number of files that will be moved.
         * Prompts the user if no files extensions are supported in the directory.
-        * Moving 'code' files is now optional with the `code` command.
         ### Extensions
         * Added extensions include [.vce, .spx, .m4r, .wax, .xlsb, .xlsm, .xlam,
           .xlb, .xla, .xlt, .xar, .xlm, .xl, .xlw, .xltx, .xll, .xlc, .ppsx, .ppsm,
@@ -30,7 +30,7 @@ Description: ![banner3](https://user-images.githubusercontent.com/60890281/96828
         
         
         ## Installation
-        ```python
+        ```text
         pip install organizer-cli
         ```
         
