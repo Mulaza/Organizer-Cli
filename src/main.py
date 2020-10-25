@@ -50,6 +50,7 @@ def main(filetype):
             if (decide == "y"):
                 # Each returns the text of appended results of files moved
                 sweep_text1 = clean()
+                displayProgressbar(moveable_num_2)
             else:
                 sys.exit()
         else:
@@ -75,6 +76,8 @@ def main(filetype):
             if (decide == "y"):
                 # Each returns the text of appended results of files moved
                 sweep_text1 = clean()
+                displayProgressbar(moveable_num_2)
+
             else:
                 sys.exit()
         else:
@@ -100,6 +103,8 @@ def main(filetype):
             if (decide == "y"):
                 # Each returns the text of appended results of files moved
                 sweep_text1 = clean()
+                displayProgressbar(moveable_num_2)
+
             else:
                 sys.exit()
         else:
@@ -125,6 +130,7 @@ def main(filetype):
             if (decide == "y"):
                 # Each returns the text of appended results of files moved
                 sweep_text1 = clean()
+                displayProgressbar(moveable_num_2)
             else:
                 sys.exit()
         else:
@@ -150,6 +156,7 @@ def main(filetype):
             if (decide == "y"):
                 # Each returns the text of appended results of files moved
                 sweep_text1 = clean()
+                displayProgressbar(moveable_num_2)
             else:
                 sys.exit()
         else:
@@ -175,6 +182,7 @@ def main(filetype):
             if (decide == "y"):
                 # Each returns the text of appended results of files moved
                 sweep_text1 = clean()
+                displayProgressbar(moveable_num_2)
             else:
                 sys.exit()
         else:
@@ -205,6 +213,7 @@ def main(filetype):
             if (decide == "y"):
                 # Each returns the text of appended results of files moved
                 sweep_text1 = clean()
+                displayProgressbar(moveable_num_2)
             else:
                 sys.exit()
         else:
@@ -230,6 +239,7 @@ def main(filetype):
             if (decide == "y"):
                 # Each returns the text of appended results of files moved
                 sweep_text1 = clean()
+                displayProgressbar(moveable_num_2)
             else:
                 sys.exit()
         else:
@@ -255,6 +265,7 @@ def main(filetype):
             if (decide == "y"):
                 # Each returns the text of appended results of files moved
                 sweep_text1 = clean()
+                displayProgressbar(moveable_num_2)
             else:
                 sys.exit()
         else:
@@ -289,6 +300,7 @@ def main(filetype):
             if (decide == "y"):
                 # Each returns the text of appended results of files moved
                 sweep_text1 = clean()
+                displayProgressbar(moveable_num_2)
             else:
                 sys.exit()
         else:
@@ -315,6 +327,7 @@ def main(filetype):
             if (decide == "y"):
                 # Each returns the text of appended results of files moved
                 sweep_text1 = clean()
+                displayProgressbar(moveable_num_2)
             else:
                 sys.exit()
         else:
@@ -353,6 +366,7 @@ def main(filetype):
             if (decide == "y"):
                 # Each returns the text of appended results of files moved
                 sweep_text1 = clean()
+                displayProgressbar(moveable_num_2)
             else:
                 sys.exit()
         else:
@@ -379,22 +393,14 @@ def main(filetype):
             if (decide == "y"):
                 # Each returns the text of appended results of files moved
                 sweep_text1 = clean()
+                displayProgressbar(moveable_num_2)
             else:
                 sys.exit()
         else:
             click.echo("No files of that type found in directory")
 
-    # Only show the bar if something was moved
-    if (moveable_num_2 > 0):
-        # The progress bar
-        bar = IncrementalBar('Organizing...', max=moveable_num_2)
-
-        for i in range(moveable_num_2):
-            # Increment the bar
-            bar.next()
-            time.sleep(0.01)
-
-        bar.finish()
+    else:
+        click.echo("Command '{}' is currently unsupported".format(filetype))
 
     # Only write to the file if something was moved
     if (sweep_text1.strip() == ""):

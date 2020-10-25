@@ -1,7 +1,7 @@
 Metadata-Version: 2.1
 Name: organizer-cli
-Version: 0.0.3
-Summary: A CLI tool that scans through a directory and sorts all ungrouped files into folders by file type.
+Version: 0.0.4
+Summary: A Python CLI tool that runs throught a given directory and organizes all un-folder bound files into folders by file extension.
 Home-page: https://github.com/Mulaza/File-Organizer
 Author: Mulaza Jacinto
 Author-email: mulazajacinto@Gmail.com
@@ -19,10 +19,14 @@ Description: ![banner3](https://user-images.githubusercontent.com/60890281/96828
         * [progress](https://pypi.org/project/progress/)
         
         ## Whats New
-        * Added supported extensions [.vce, .spx, .m4r, .wax, .xlsb, .xlsm, .xlam,
-                      .xlb, .xla, .xlt, .xar, .xlm, .xl, .xlw, .xltx, .xll, .xlc, .ppsx, .ppsm,
-                           .pptm, .sldx, .pot, .potx, .ppam, .ppa, .sldm, .pa, .potm]
-        * Moving 'code' files is now optional with the `code` command
+        ### Features
+        * Pre-action prompt to the number of files that will be moved.
+        * Prompts the user if no files extensions are supported in the directory.
+        * Moving 'code' files is now optional with the `code` command.
+        ### Extensions
+        * Added extensions include [.vce, .spx, .m4r, .wax, .xlsb, .xlsm, .xlam,
+          .xlb, .xla, .xlt, .xar, .xlm, .xl, .xlw, .xltx, .xll, .xlc, .ppsx, .ppsm,
+          .pptm, .sldx, .pot, .potx, .ppam, .ppa, .sldm, .pa, .potm]
         
         
         ## Installation
@@ -91,6 +95,8 @@ Description: ![banner3](https://user-images.githubusercontent.com/60890281/96828
         
 Platform: UNKNOWN
 Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: End Users/Desktop
 Classifier: Natural Language :: English
 Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
 Description-Content-Type: text/markdown

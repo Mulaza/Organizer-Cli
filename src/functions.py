@@ -2,13 +2,29 @@ import os
 import sys
 import pathlib
 import shutil
+import time
+from progress.bar import IncrementalBar
 
 # Modules
 from file_extensions import exceptionFile, masterList
 
-# --------------------------------- The clean function that
+
+# Displays the cleaning progress bar
+def displayProgressbar(item_count):
+    # Only show the bar if something was moved
+    if (item_count > 0):
+        # The progress bar
+        bar = IncrementalBar('Organizing...', max=item_count)
+
+        for i in range(item_count):
+            # Increment the bar
+            bar.next()
+            time.sleep(0.01)
+
+        bar.finish()
 
 
+# The clean function that
 def clean():
 
     # The log text of all files being moved
