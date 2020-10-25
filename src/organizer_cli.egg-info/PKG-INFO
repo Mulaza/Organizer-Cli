@@ -6,13 +6,24 @@ Home-page: https://github.com/Mulaza/File-Organizer
 Author: Mulaza Jacinto
 Author-email: mulazajacinto@Gmail.com
 License: UNKNOWN
-Description: # Organizer cli
-        A script that scans throught the current directory and organizes all loose files into neat folders by file extension
+Description: ![banner3](https://user-images.githubusercontent.com/60890281/96828268-ede10200-1469-11eb-832d-f2808434797c.png)
+        
+        
+        # Organizer cli
+        A Python CLI tool that runs throught a given directory and organizes all un-folder bound files into folders by file extension.
+        Supports 108 different file extensions over 27 file type categories.
         
         ## Dependencies
-        [click](https://pypi.org/project/click8/)
-        [colorama](https://pypi.org/project/colorama/)
-        [progress](https://pypi.org/project/progress/)
+        * [click](https://pypi.org/project/click8/)
+        * [colorama](https://pypi.org/project/colorama/)
+        * [progress](https://pypi.org/project/progress/)
+        
+        ## Whats New
+        * Added supported extensions [.vce, .spx, .m4r, .wax, .xlsb, .xlsm, .xlam,
+                      .xlb, .xla, .xlt, .xar, .xlm, .xl, .xlw, .xltx, .xll, .xlc, .ppsx, .ppsm,
+                           .pptm, .sldx, .pot, .potx, .ppam, .ppa, .sldm, .pa, .potm]
+        * Moving 'code' files is now optional with the `code` command
+        
         
         ## Installation
         ```python

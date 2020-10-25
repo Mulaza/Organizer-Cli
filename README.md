@@ -1,3 +1,6 @@
+![banner3](https://user-images.githubusercontent.com/60890281/96828268-ede10200-1469-11eb-832d-f2808434797c.png)
+
+
 # Organizer cli
 A Python CLI tool that runs throught a given directory and organizes all un-folder bound files into folders by file extension.
 Supports 108 different file extensions over 27 file type categories.
@@ -8,10 +11,14 @@ Supports 108 different file extensions over 27 file type categories.
 * [progress](https://pypi.org/project/progress/)
 
 ## Whats New
-* Added supported extensions [.vce, .spx, .m4r, .wax, .xlsb, .xlsm, .xlam,
-              .xlb, .xla, .xlt, .xar, .xlm, .xl, .xlw, .xltx, .xll, .xlc, .ppsx, .ppsm,
-                   .pptm, .sldx, .pot, .potx, .ppam, .ppa, .sldm, .pa, .potm]
-* Moving 'code' files is now optional with the `code` command
+### Features
+* Pre-action prompt to the number of files that will be moved.
+* Prompts the user if no files extensions are supported in the directory.
+* Moving 'code' files is now optional with the `code` command.
+### Extensions
+* Added extensions include [.vce, .spx, .m4r, .wax, .xlsb, .xlsm, .xlam,
+  .xlb, .xla, .xlt, .xar, .xlm, .xl, .xlw, .xltx, .xll, .xlc, .ppsx, .ppsm,
+  .pptm, .sldx, .pot, .potx, .ppam, .ppa, .sldm, .pa, .potm]
 
 
 ## Installation
