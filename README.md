@@ -29,7 +29,7 @@ pip install organizer-cli
 ### Local File
 ```text
 cd Organizer-Cli
-pip install -e
+pip install -e .
 ```
 
 ## Commands

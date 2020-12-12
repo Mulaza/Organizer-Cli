@@ -6,7 +6,7 @@ Home-page: https://github.com/Mulaza/File-Organizer
 Author: Mulaza Jacinto
 Author-email: mulazajacinto@Gmail.com
 License: UNKNOWN
-Description: ![banner2](https://user-images.githubusercontent.com/60890281/97106137-d0769700-16fa-11eb-93a7-834e1c3aee29.png)
+Description: ![img](https://user-images.githubusercontent.com/60890281/99897269-0b0c2900-2cd3-11eb-95af-9332c886d7a3.png)
         
         
         
@@ -16,7 +16,7 @@ Description: ![banner2](https://user-images.githubusercontent.com/60890281/97106
         
         ## Dependencies
         * [click](https://pypi.org/project/click8/)
-        * [colorama](https://pypi.org/project/colorama/)
+        * [colorama](https://pypi.org/project/colorama/) 
         * [progress](https://pypi.org/project/progress/)
         
         ## Whats New
@@ -30,8 +30,14 @@ Description: ![banner2](https://user-images.githubusercontent.com/60890281/97106
         
         
         ## Installation
+        ### Pip
         ```text
         pip install organizer-cli
+        ```
+        ### Local File
+        ```text
+        cd Organizer-Cli
+        pip install -e
         ```
         
         ## Commands
