@@ -22,11 +22,11 @@ Supports 108 different file extensions over 27 file type categories.
 
 
 ## Installation
-### Pip
+### Pip install
 ```text
 pip install organizer-cli
 ```
-### Local File
+### Local install
 ```text
 cd Organizer-Cli
 pip install -e .
