@@ -8,7 +8,7 @@ Supports 108 different file extensions over 27 file type categories.
 
 ## Dependencies
 * [click](https://pypi.org/project/click8/)
-* [colorama](https://pypi.org/project/colorama/)
+* [colorama](https://pypi.org/project/colorama/) 
 * [progress](https://pypi.org/project/progress/)
 
 ## Whats New
@@ -22,8 +22,14 @@ Supports 108 different file extensions over 27 file type categories.
 
 
 ## Installation
+### Pip
 ```text
 pip install organizer-cli
+```
+### Local File
+```text
+cd Organizer-Cli
+pip install -e
 ```
 
 ## Commands
