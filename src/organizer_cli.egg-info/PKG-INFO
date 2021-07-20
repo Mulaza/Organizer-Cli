@@ -1,14 +1,12 @@
 Metadata-Version: 2.1
 Name: organizer-cli
-Version: 0.0.4
+Version: 0.0.45
 Summary: A Python CLI tool that runs throught a given directory and organizes all un-folder bound files into folders by file extension.
 Home-page: https://github.com/Mulaza/File-Organizer
 Author: Mulaza Jacinto
 Author-email: mulazajacinto@Gmail.com
 License: UNKNOWN
-Description: ![img](https://user-images.githubusercontent.com/60890281/99897269-0b0c2900-2cd3-11eb-95af-9332c886d7a3.png)
-        
-        
+Description: ![banner](https://user-images.githubusercontent.com/60890281/101976738-24c1e000-3c83-11eb-8780-f80eb7587cad.png)
         
         # Organizer cli
         A Python CLI tool that runs throught a given directory and organizes all un-folder bound files into folders by file extension.
@@ -19,6 +17,19 @@ Description: ![img](https://user-images.githubusercontent.com/60890281/99897269-
         * [colorama](https://pypi.org/project/colorama/) 
         * [progress](https://pypi.org/project/progress/)
         
+        
+        ## Installation
+        ### Pip install
+        ```text
+        pip install organizer-cli
+        ```
+        ### Local install
+        ```text
+        cd Organizer-Cli
+        pip install -e .
+        ```
+        
+        
         ## Whats New
         ### Features
         * Pre-action prompt to the number of files that will be moved.
@@ -28,17 +39,6 @@ Description: ![img](https://user-images.githubusercontent.com/60890281/99897269-
           .xlb, .xla, .xlt, .xar, .xlm, .xl, .xlw, .xltx, .xll, .xlc, .ppsx, .ppsm,
           .pptm, .sldx, .pot, .potx, .ppam, .ppa, .sldm, .pa, .potm]
         
-        
-        ## Installation
-        ### Pip
-        ```text
-        pip install organizer-cli
-        ```
-        ### Local File
-        ```text
-        cd Organizer-Cli
-        pip install -e
-        ```
         
         ## Commands
         

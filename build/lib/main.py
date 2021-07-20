@@ -1,5 +1,4 @@
 
-
 import pathlib
 import shutil
 import time
@@ -38,23 +37,7 @@ def main(filetype):
         moveable_num_2 = movableFilesCount()
 
         # Only ask the user to move files if there are files of that type available
-        if (moveable_num_2 > 0):
-
-            # Prompt the user if they wish to continue
-            attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
-                "This action will be moving {} file(s) would you like to continue (y/n)".format(
-                    moveable_num_2)
-
-            decide = click.prompt(attention_text,  type=str)
-
-            if (decide == "y"):
-                # Each returns the text of appended results of files moved
-                sweep_text1 = clean()
-                displayProgressbar(moveable_num_2)
-            else:
-                sys.exit()
-        else:
-            click.echo("No files of that type found in directory")
+        askToMove(moveable_num_2, click)
 
     elif (filetype == 'audio'):
 
@@ -64,24 +47,7 @@ def main(filetype):
         moveable_num_2 = movableFilesCount()
 
         # Only ask the user to move files if there are files of that type available
-        if (moveable_num_2 > 0):
-
-            # Prompt the user if they wish to continue
-            attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
-                "This action will be moving {} file(s) would you like to continue (y/n)".format(
-                    moveable_num_2)
-
-            decide = click.prompt(attention_text,  type=str)
-
-            if (decide == "y"):
-                # Each returns the text of appended results of files moved
-                sweep_text1 = clean()
-                displayProgressbar(moveable_num_2)
-
-            else:
-                sys.exit()
-        else:
-            click.echo("No files of that type found in directory")
+        askToMove(moveable_num_2, click)
 
     elif (filetype == "video"):
 
@@ -91,24 +57,7 @@ def main(filetype):
         moveable_num_2 = movableFilesCount()
 
         # Only ask the user to move files if there are files of that type available
-        if (moveable_num_2 > 0):
-
-            # Prompt the user if they wish to continue
-            attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
-                "This action will be moving {} file(s) would you like to continue (y/n)".format(
-                    moveable_num_2)
-
-            decide = click.prompt(attention_text,  type=str)
-
-            if (decide == "y"):
-                # Each returns the text of appended results of files moved
-                sweep_text1 = clean()
-                displayProgressbar(moveable_num_2)
-
-            else:
-                sys.exit()
-        else:
-            click.echo("No files of that type found in directory")
+        askToMove(moveable_num_2, click)
 
     elif (filetype == "vector"):
 
@@ -118,23 +67,7 @@ def main(filetype):
         moveable_num_2 = movableFilesCount()
 
         # Only ask the user to move files if there are files of that type available
-        if (moveable_num_2 > 0):
-
-            # Prompt the user if they wish to continue
-            attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
-                "This action will be moving {} file(s) would you like to continue (y/n)".format(
-                    moveable_num_2)
-
-            decide = click.prompt(attention_text,  type=str)
-
-            if (decide == "y"):
-                # Each returns the text of appended results of files moved
-                sweep_text1 = clean()
-                displayProgressbar(moveable_num_2)
-            else:
-                sys.exit()
-        else:
-            click.echo("No files of that type found in directory")
+        askToMove(moveable_num_2, click)
 
     elif (filetype == "gif"):
 
@@ -144,23 +77,7 @@ def main(filetype):
         moveable_num_2 = movableFilesCount()
 
         # Only ask the user to move files if there are files of that type available
-        if (moveable_num_2 > 0):
-
-            # Prompt the user if they wish to continue
-            attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
-                "This action will be moving {} file(s) would you like to continue (y/n)".format(
-                    moveable_num_2)
-
-            decide = click.prompt(attention_text,  type=str)
-
-            if (decide == "y"):
-                # Each returns the text of appended results of files moved
-                sweep_text1 = clean()
-                displayProgressbar(moveable_num_2)
-            else:
-                sys.exit()
-        else:
-            click.echo("No files of that type found in directory")
+        askToMove(moveable_num_2, click)
 
     elif (filetype == "photoshop"):
 
@@ -170,23 +87,7 @@ def main(filetype):
         moveable_num_2 = movableFilesCount()
 
         # Only ask the user to move files if there are files of that type available
-        if (moveable_num_2 > 0):
-
-            # Prompt the user if they wish to continue
-            attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
-                "This action will be moving {} file(s) would you like to continue (y/n)".format(
-                    moveable_num_2)
-
-            decide = click.prompt(attention_text,  type=str)
-
-            if (decide == "y"):
-                # Each returns the text of appended results of files moved
-                sweep_text1 = clean()
-                displayProgressbar(moveable_num_2)
-            else:
-                sys.exit()
-        else:
-            click.echo("No files of that type found in directory")
+        askToMove(moveable_num_2, click)
 
     elif (filetype == "office"):
 
@@ -201,23 +102,7 @@ def main(filetype):
         moveable_num_2 = movableFilesCount()
 
         # Only ask the user to move files if there are files of that type available
-        if (moveable_num_2 > 0):
-
-            # Prompt the user if they wish to continue
-            attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
-                "This action will be moving {} file(s) would you like to continue (y/n)".format(
-                    moveable_num_2)
-
-            decide = click.prompt(attention_text,  type=str)
-
-            if (decide == "y"):
-                # Each returns the text of appended results of files moved
-                sweep_text1 = clean()
-                displayProgressbar(moveable_num_2)
-            else:
-                sys.exit()
-        else:
-            click.echo("No files of that type found in directory")
+        askToMove(moveable_num_2, click)
 
     elif (filetype == 'pdf'):
 
@@ -227,23 +112,7 @@ def main(filetype):
         moveable_num_2 = movableFilesCount()
 
         # Only ask the user to move files if there are files of that type available
-        if (moveable_num_2 > 0):
-
-            # Prompt the user if they wish to continue
-            attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
-                "This action will be moving {} file(s) would you like to continue (y/n)".format(
-                    moveable_num_2)
-
-            decide = click.prompt(attention_text,  type=str)
-
-            if (decide == "y"):
-                # Each returns the text of appended results of files moved
-                sweep_text1 = clean()
-                displayProgressbar(moveable_num_2)
-            else:
-                sys.exit()
-        else:
-            click.echo("No files of that type found in directory")
+        askToMove(moveable_num_2, click)
 
     elif (filetype == "font"):
 
@@ -253,23 +122,7 @@ def main(filetype):
         moveable_num_2 = movableFilesCount()
 
         # Only ask the user to move files if there are files of that type available
-        if (moveable_num_2 > 0):
-
-            # Prompt the user if they wish to continue
-            attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
-                "This action will be moving {} file(s) would you like to continue (y/n)".format(
-                    moveable_num_2)
-
-            decide = click.prompt(attention_text,  type=str)
-
-            if (decide == "y"):
-                # Each returns the text of appended results of files moved
-                sweep_text1 = clean()
-                displayProgressbar(moveable_num_2)
-            else:
-                sys.exit()
-        else:
-            click.echo("No files of that type found in directory")
+        askToMove(moveable_num_2, click)
 
     elif (filetype == "code"):
 
@@ -288,23 +141,7 @@ def main(filetype):
         moveable_num_2 = movableFilesCount()
 
         # Only ask the user to move files if there are files of that type available
-        if (moveable_num_2 > 0):
-
-            # Prompt the user if they wish to continue
-            attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
-                "This action will be moving {} file(s) would you like to continue (y/n)".format(
-                    moveable_num_2)
-
-            decide = click.prompt(attention_text,  type=str)
-
-            if (decide == "y"):
-                # Each returns the text of appended results of files moved
-                sweep_text1 = clean()
-                displayProgressbar(moveable_num_2)
-            else:
-                sys.exit()
-        else:
-            click.echo("No files of that type found in directory")
+        askToMove(moveable_num_2, click)
 
     elif (filetype == "program"):
 
@@ -315,23 +152,7 @@ def main(filetype):
         moveable_num_2 = movableFilesCount()
 
         # Only ask the user to move files if there are files of that type available
-        if (moveable_num_2 > 0):
-
-            # Prompt the user if they wish to continue
-            attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
-                "This action will be moving {} file(s) would you like to continue (y/n)".format(
-                    moveable_num_2)
-
-            decide = click.prompt(attention_text,  type=str)
-
-            if (decide == "y"):
-                # Each returns the text of appended results of files moved
-                sweep_text1 = clean()
-                displayProgressbar(moveable_num_2)
-            else:
-                sys.exit()
-        else:
-            click.echo("No files of that type found in directory")
+        askToMove(moveable_num_2, click)
 
     elif (filetype == "safe"):
 
@@ -354,23 +175,7 @@ def main(filetype):
         moveable_num_2 = movableFilesCount()
 
         # Only ask the user to move files if there are files of that type available
-        if (moveable_num_2 > 0):
-
-            # Prompt the user if they wish to continue
-            attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
-                "This action will be moving {} file(s) would you like to continue (y/n)".format(
-                    moveable_num_2)
-
-            decide = click.prompt(attention_text,  type=str)
-
-            if (decide == "y"):
-                # Each returns the text of appended results of files moved
-                sweep_text1 = clean()
-                displayProgressbar(moveable_num_2)
-            else:
-                sys.exit()
-        else:
-            click.echo("No files of that type found in directory")
+        askToMove(moveable_num_2, click)
 
     elif (filetype == "all"):
 
@@ -381,23 +186,7 @@ def main(filetype):
         moveable_num_2 = movableFilesCount()
 
         # Only ask the user to move files if there are files of that type available
-        if (moveable_num_2 > 0):
-
-            # Prompt the user if they wish to continue
-            attention_text = Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + \
-                "This action will be moving {} file(s) would you like to continue (y/n)".format(
-                    moveable_num_2)
-
-            decide = click.prompt(attention_text,  type=str)
-
-            if (decide == "y"):
-                # Each returns the text of appended results of files moved
-                sweep_text1 = clean()
-                displayProgressbar(moveable_num_2)
-            else:
-                sys.exit()
-        else:
-            click.echo("No files of that type found in directory")
+        askToMove(moveable_num_2, click)
 
     else:
         click.echo("Command '{}' is currently unsupported".format(filetype))

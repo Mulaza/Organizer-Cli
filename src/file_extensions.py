@@ -39,7 +39,7 @@ exceptionFile = 'main.py'
 
 # --------------------------------- Supported File extensions
 textFiles = [".txt", ".rtf"]
-imageFiles = [".png", ".jpg", ".jpeg", ".bmp", ".tif", ".tiff"]
+imageFiles = [".png", ".jpg", ".jpeg", ".bmp", ".tif", ".tiff", ".webp"]
 audioFiles = [".wav", ".mp3", ".ogg", ".gsm", ".dct", ".flac", ".au", ".aiff", ".vox", "raw", ".wma", ".aac", ".atrac",
               ".ra", ".oma", ".omg", ".atp", ".waptt", ".i3pack", ".3ga", ".opus", ".cda", ".wpl", ".rec", ".vdjsample",
               ".mus", ".aax", ".amr", ".ds2", ".sng", ".dss", ".nvf", ".midi", ".m4a", ".pcm", ".mscz", ".ses", ".dvf",

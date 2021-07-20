@@ -3,10 +3,34 @@ import sys
 import pathlib
 import shutil
 import time
+from colorama import Fore, Back, Style
+
 from progress.bar import IncrementalBar
 
 # Modules
 from file_extensions import exceptionFile, masterList
+
+
+# Prompt the user if they wish to continue
+def attentionPrompt(number):
+    return Fore.YELLOW + "ATTENTION " + Style.RESET_ALL + "This action will be moving {} file(s) would you like to continue (y/n)".format(number)
+
+
+# See if the number is moveable / click is the actual 'click' library
+def askToMove(number, click):
+    # Only ask the user to move files if there are files of that type available
+    if (number > 0):
+
+        decide = click.prompt(attentionPrompt(number),  type=str)
+
+        if (decide == "y"):
+            # Each returns the text of appended results of files moved
+            sweep_text1 = clean()
+            displayProgressbar(number)
+        else:
+            sys.exit()
+    else:
+        click.echo("No files of that type found in directory")
 
 
 # Displays the cleaning progress bar

@@ -8,7 +8,7 @@ with open("README.md", "r") as fh:
 setup(
 
     name='organizer-cli',
-    version='0.0.4',
+    version='0.0.45',
     description='A Python CLI tool that runs throught a given directory and organizes all un-folder bound files into folders by file extension.',
     url="https://github.com/Mulaza/File-Organizer",
     author="Mulaza Jacinto",
