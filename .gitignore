@@ -1,9 +1,10 @@
-.idea
-venv
+/.idea
+/venv
 Organized
 __pycache__
 how_to_upload.txt
 todo.txt
+/src/__pycache__
 
 # Created by https://www.toptal.com/developers/gitignore/api/python
 # Edit at https://www.toptal.com/developers/gitignore?templates=python
@@ -20,8 +21,10 @@ __pycache__/
 # Distribution / packaging
 .Python
 #build/
+/build
 develop-eggs/
 #dist/
+/dist
 downloads/
 eggs/
 .eggs/
